@@ -28,19 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            TreeNode treeNode5 = new TreeNode("Label");
+            TreeNode treeNode6 = new TreeNode("Button");
+            TreeNode treeNode7 = new TreeNode("Checkbox");
+            TreeNode treeNode8 = new TreeNode("Root", new TreeNode[] { treeNode5, treeNode6, treeNode7 });
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chkC));
             label1 = new Label();
             groupBox1 = new GroupBox();
             txtAddress = new TextBox();
             txtName = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            City = new ListBox();
+            lstCity = new ListBox();
             rdMale = new RadioButton();
             rdFemale = new RadioButton();
             checkBox1 = new CheckBox();
             chkASP = new CheckBox();
             btnSubmit = new Button();
+            treeView1 = new TreeView();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -104,15 +112,15 @@
             label2.Text = "Name";
             label2.Click += label2_Click;
             // 
-            // City
+            // lstCity
             // 
-            City.FormattingEnabled = true;
-            City.Items.AddRange(new object[] { "Jyväskylä", "Tampere", "Helsinki", "Turku", "Oulu" });
-            City.Location = new Point(61, 267);
-            City.Name = "City";
-            City.Size = new Size(175, 84);
-            City.TabIndex = 2;
-            City.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            lstCity.FormattingEnabled = true;
+            lstCity.Items.AddRange(new object[] { "Jyväskylä", "Tampere", "Helsinki", "Turku", "Oulu" });
+            lstCity.Location = new Point(61, 267);
+            lstCity.Name = "lstCity";
+            lstCity.Size = new Size(175, 84);
+            lstCity.TabIndex = 2;
+            lstCity.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // rdMale
             // 
@@ -166,18 +174,47 @@
             btnSubmit.TabIndex = 7;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
+            // treeView1
+            // 
+            treeView1.Location = new Point(508, 144);
+            treeView1.Name = "treeView1";
+            treeNode5.Name = "Label";
+            treeNode5.Text = "Label";
+            treeNode6.Name = "Button";
+            treeNode6.Text = "Button";
+            treeNode7.Name = "Checkbox";
+            treeNode7.Text = "Checkbox";
+            treeNode8.Name = "Root";
+            treeNode8.Text = "Root";
+            treeView1.Nodes.AddRange(new TreeNode[] { treeNode8 });
+            treeView1.Size = new Size(151, 121);
+            treeView1.TabIndex = 8;
+            treeView1.AfterSelect += treeView1_AfterSelect;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(508, 289);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(256, 168);
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // chkC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(pictureBox1);
+            Controls.Add(treeView1);
             Controls.Add(btnSubmit);
             Controls.Add(chkASP);
             Controls.Add(checkBox1);
             Controls.Add(rdFemale);
             Controls.Add(rdMale);
-            Controls.Add(City);
+            Controls.Add(lstCity);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Margin = new Padding(3, 4, 3, 4);
@@ -185,6 +222,7 @@
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,11 +235,13 @@
         private Label label2;
         private TextBox txtAddress;
         private TextBox txtName;
-        private ListBox City;
+        private ListBox lstCity;
         private RadioButton rdMale;
         private RadioButton rdFemale;
         private CheckBox checkBox1;
         private CheckBox chkASP;
         private Button btnSubmit;
+        private TreeView treeView1;
+        private PictureBox pictureBox1;
     }
 }
