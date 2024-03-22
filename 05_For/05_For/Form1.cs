@@ -11,21 +11,8 @@ namespace _05_For
 
         private void b_start_Click(object sender, EventArgs e)
         {
-
             var updateTask = new Thread(UpdateLabel);
             updateTask.Start();
-
-            /*int usrInput = int.Parse(tb_int.Text);
-            for (int i = 1; i <= usrInput; i++)
-            //foreach (int value in Enumerable.Range(1, usrInput))
-            {
-                Thread.Sleep(100);
-
-                string valueString = i.ToString();
-                l_display.Text = i.ToString();
-
-            }
-            */
         }
 
         private void UpdateLabel()
