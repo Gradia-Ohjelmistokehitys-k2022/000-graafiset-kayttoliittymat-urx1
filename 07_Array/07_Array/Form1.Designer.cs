@@ -35,12 +35,14 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            label8 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            button1 = new Button();
+            l_hakutulos = new Label();
+            tb_taulukonkoko = new TextBox();
+            tb_talletettavanumero = new TextBox();
+            tb_talletuspaikanindeksi1 = new TextBox();
+            tb_talletuspaikanindeksi2 = new TextBox();
+            b_luotaulukko = new Button();
+            b_talleta = new Button();
+            b_hae = new Button();
             SuspendLayout();
             // 
             // label1
@@ -106,63 +108,82 @@
             label7.TabIndex = 6;
             label7.Text = "HAKU";
             // 
-            // label8
+            // l_hakutulos
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(218, 396);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 20);
-            label8.TabIndex = 7;
-            label8.Text = "label8";
+            l_hakutulos.AutoSize = true;
+            l_hakutulos.Location = new Point(218, 396);
+            l_hakutulos.Name = "l_hakutulos";
+            l_hakutulos.Size = new Size(0, 20);
+            l_hakutulos.TabIndex = 7;
             // 
-            // textBox1
+            // tb_taulukonkoko
             // 
-            textBox1.Location = new Point(218, 75);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(88, 27);
-            textBox1.TabIndex = 8;
+            tb_taulukonkoko.Location = new Point(218, 75);
+            tb_taulukonkoko.Name = "tb_taulukonkoko";
+            tb_taulukonkoko.Size = new Size(125, 27);
+            tb_taulukonkoko.TabIndex = 8;
             // 
-            // textBox2
+            // tb_talletettavanumero
             // 
-            textBox2.Location = new Point(218, 177);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 9;
+            tb_talletettavanumero.Location = new Point(218, 177);
+            tb_talletettavanumero.Name = "tb_talletettavanumero";
+            tb_talletettavanumero.Size = new Size(125, 27);
+            tb_talletettavanumero.TabIndex = 9;
             // 
-            // textBox3
+            // tb_talletuspaikanindeksi1
             // 
-            textBox3.Location = new Point(218, 222);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 10;
+            tb_talletuspaikanindeksi1.Location = new Point(218, 222);
+            tb_talletuspaikanindeksi1.Name = "tb_talletuspaikanindeksi1";
+            tb_talletuspaikanindeksi1.Size = new Size(125, 27);
+            tb_talletuspaikanindeksi1.TabIndex = 10;
             // 
-            // textBox4
+            // tb_talletuspaikanindeksi2
             // 
-            textBox4.Location = new Point(218, 327);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 11;
+            tb_talletuspaikanindeksi2.Location = new Point(218, 327);
+            tb_talletuspaikanindeksi2.Name = "tb_talletuspaikanindeksi2";
+            tb_talletuspaikanindeksi2.Size = new Size(125, 27);
+            tb_talletuspaikanindeksi2.TabIndex = 11;
             // 
-            // button1
+            // b_luotaulukko
             // 
-            button1.Location = new Point(343, 75);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 12;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            b_luotaulukko.Location = new Point(381, 75);
+            b_luotaulukko.Name = "b_luotaulukko";
+            b_luotaulukko.Size = new Size(176, 29);
+            b_luotaulukko.TabIndex = 12;
+            b_luotaulukko.Text = "Luo taulukko";
+            b_luotaulukko.UseVisualStyleBackColor = true;
+            // 
+            // b_talleta
+            // 
+            b_talleta.Location = new Point(381, 222);
+            b_talleta.Name = "b_talleta";
+            b_talleta.Size = new Size(176, 29);
+            b_talleta.TabIndex = 13;
+            b_talleta.Text = "Talleta";
+            b_talleta.UseVisualStyleBackColor = true;
+            // 
+            // b_hae
+            // 
+            b_hae.Location = new Point(381, 327);
+            b_hae.Name = "b_hae";
+            b_hae.Size = new Size(176, 29);
+            b_hae.TabIndex = 14;
+            b_hae.Text = "Hae";
+            b_hae.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label8);
+            Controls.Add(b_hae);
+            Controls.Add(b_talleta);
+            Controls.Add(b_luotaulukko);
+            Controls.Add(tb_talletuspaikanindeksi2);
+            Controls.Add(tb_talletuspaikanindeksi1);
+            Controls.Add(tb_talletettavanumero);
+            Controls.Add(tb_taulukonkoko);
+            Controls.Add(l_hakutulos);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -185,11 +206,13 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
+        private Label l_hakutulos;
+        private TextBox tb_taulukonkoko;
+        private TextBox tb_talletettavanumero;
+        private TextBox tb_talletuspaikanindeksi1;
+        private TextBox tb_talletuspaikanindeksi2;
+        private Button b_luotaulukko;
+        private Button b_talleta;
+        private Button b_hae;
     }
 }
