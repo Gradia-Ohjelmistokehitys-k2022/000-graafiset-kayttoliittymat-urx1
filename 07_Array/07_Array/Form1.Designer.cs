@@ -172,6 +172,7 @@
             b_hae.TabIndex = 14;
             b_hae.Text = "Hae";
             b_hae.UseVisualStyleBackColor = true;
+            b_hae.Click += b_hae_Click;
             // 
             // Form1
             // 

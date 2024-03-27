@@ -34,7 +34,7 @@ namespace _07_Array
 
         public void b_talleta_Click(object sender, EventArgs e)
         {
-            if (tb_talletettavanumero.Text == "" && tb_talletuspaikanindeksi1.Text == "")
+            if (tb_talletettavanumero.Text != "" && tb_talletuspaikanindeksi1.Text != "")
             {
                 int number;
                 bool isInt = int.TryParse(tb_taulukonkoko.Text, out number);
@@ -42,7 +42,7 @@ namespace _07_Array
                 {
                     int intToSave = Int32.Parse(tb_talletettavanumero.Text);
                     int intIndex = Int32.Parse(tb_talletuspaikanindeksi1.Text);
-                    myArray[intIndex-1] = intToSave;
+                    myArray[intIndex] = intToSave;
                 }
                 else
                 {
@@ -54,6 +54,29 @@ namespace _07_Array
                 MessageBox.Show("Puutteelliset tiedot.");
             }
         }
+
+        private void b_hae_Click(object sender, EventArgs e)
+        {
+            if (tb_talletuspaikanindeksi2.Text != "")
+            {
+                int number;
+                bool isInt = int.TryParse(tb_talletuspaikanindeksi2.Text, out number);                
+                if (isInt == true)
+                {
+                    int intToFind = Int32.Parse(tb_talletuspaikanindeksi2.Text);
+                    int intFromArray = myArray[intToFind];
+                    l_hakutulos.Text = intFromArray.ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("Tähän kenttään voi syöttää vain numeroita.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Puutteelliset tiedot.");
+            }
         }
     }
 }
