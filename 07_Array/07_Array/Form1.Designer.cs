@@ -152,6 +152,7 @@
             b_luotaulukko.TabIndex = 12;
             b_luotaulukko.Text = "Luo taulukko";
             b_luotaulukko.UseVisualStyleBackColor = true;
+            b_luotaulukko.Click += b_luotaulukko_Click;
             // 
             // b_talleta
             // 
@@ -161,6 +162,7 @@
             b_talleta.TabIndex = 13;
             b_talleta.Text = "Talleta";
             b_talleta.UseVisualStyleBackColor = true;
+            b_talleta.Click += b_talleta_Click;
             // 
             // b_hae
             // 
