@@ -18,28 +18,23 @@ namespace ArrayLotto
             int[] lisänumerot = new int[2];
             Random rnd = new Random();
 
-            foreach (int value in Enumerable.Range(1, 7))
+            while (counter < 7)           
             {
+                alku:
                 lottonumero = rnd.Next(2, 41);
-                foreach (int i in lottonumerot)
-                    if (counter < 8)
+
+                foreach (int x in lottonumerot)
+                    if (x == lottonumero)
                     {
-                        if (i == lottonumero)
-                        {
-                            counter--;
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        break;
+                        Console.WriteLine("TUPLAT: " + x + ", aloitetaan alusta.");
+                        counter-- ;
+                        goto alku;
                     }
 
                 lottonumerot[counter] = lottonumero;
+                l_lottonumerot.Text = string.Join(", ", lottonumerot);
                 counter++;
-
-                l_lottonumerot.Text = string.Join(",", lottonumerot);
-                Console.WriteLine(counter);
+                Console.WriteLine(counter.ToString() + " " + lottonumero.ToString());
 
             }
 
