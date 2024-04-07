@@ -37,6 +37,7 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
+            l_oikeatluvut = new Label();
             SuspendLayout();
             // 
             // b_arvoluvut
@@ -107,11 +108,21 @@
             textBox7.Size = new Size(30, 27);
             textBox7.TabIndex = 8;
             // 
+            // l_oikeatluvut
+            // 
+            l_oikeatluvut.AutoSize = true;
+            l_oikeatluvut.Location = new Point(386, 308);
+            l_oikeatluvut.Name = "l_oikeatluvut";
+            l_oikeatluvut.Size = new Size(0, 20);
+            l_oikeatluvut.TabIndex = 9;
+            l_oikeatluvut.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(l_oikeatluvut);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
@@ -138,5 +149,6 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
+        private Label l_oikeatluvut;
     }
 }

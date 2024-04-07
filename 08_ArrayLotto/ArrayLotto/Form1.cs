@@ -16,6 +16,9 @@ namespace ArrayLotto
 
             int lottonumero;
             int lisänumero;
+            int oikeatluvut = 0;
+
+
             int[] lottonumerot = new int[7];
             int[] lisänumerot = new int[2];
             var kaikkinumerot = lottonumerot.Concat(lisänumerot);
@@ -78,6 +81,29 @@ namespace ArrayLotto
             Array.Sort(lisänumerot);
 
             l_lottonumerot.Text = "Lottonumerot: " + string.Join(", ", lottonumerot) + " Lisänumerot: " + string.Join(",", lisänumerot);
+
+            int ol1 = Int32.Parse(textBox1.Text);
+            int ol2 = Int32.Parse(textBox2.Text);
+            int ol3 = Int32.Parse(textBox3.Text);
+            int ol4 = Int32.Parse(textBox4.Text);
+            int ol5 = Int32.Parse(textBox5.Text);
+            int ol6 = Int32.Parse(textBox6.Text);
+            int ol7 = Int32.Parse(textBox7.Text);
+
+            int[] omarivi = {ol1,ol2,ol3,ol4,ol5,ol6,ol7};
+
+            foreach (int x in omarivi)
+            {
+                foreach (int y in kaikkinumerot)
+                {
+                    if (x==y)
+                    {
+                        oikeatluvut++;
+                    }
+                }
+            }
+            l_oikeatluvut.Text = "Oikeat luvut: " + oikeatluvut.ToString();
+
 
         }
     }
