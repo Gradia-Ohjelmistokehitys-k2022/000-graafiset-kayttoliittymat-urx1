@@ -14,16 +14,15 @@ namespace ArrayLotto
         {
             int counter = 0;
             int lottonumero;
-            int[] lottonumerot = new int[7];
-            int[] lisänumerot = new int[2];
+            int[] numerot = new int[9];
             Random rnd = new Random();
 
-            while (counter < 7)           
+            while (counter < 9)           
             {
                 alku:
                 lottonumero = rnd.Next(2, 41);
 
-                foreach (int x in lottonumerot)
+                foreach (int x in numerot)
                     if (x == lottonumero)
                     {
                         Console.WriteLine("TUPLAT: " + x + ", aloitetaan alusta.");
@@ -31,9 +30,17 @@ namespace ArrayLotto
                         goto alku;
                     }
 
-                lottonumerot[counter] = lottonumero;
-                l_lottonumerot.Text = string.Join(", ", lottonumerot);
+                numerot[counter] = lottonumero;
+
+                var lottonumerot = numerot[0..7];
+                var lisänumerot = numerot[7..9];
+
+                Array.Sort(lottonumerot);
+                Array.Sort(lisänumerot);
+
+                l_lottonumerot.Text = "Lottonumerot: " + string.Join(", ", lottonumerot) + " Lisänumerot: " + string.Join(",", lisänumerot);
                 counter++;
+
                 Console.WriteLine(counter.ToString() + " " + lottonumero.ToString());
 
             }
