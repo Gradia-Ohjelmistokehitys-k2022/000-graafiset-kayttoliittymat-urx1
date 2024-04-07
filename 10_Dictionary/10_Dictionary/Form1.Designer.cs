@@ -38,7 +38,7 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            l_haevalue = new Label();
             SuspendLayout();
             // 
             // button1
@@ -49,6 +49,7 @@
             button1.TabIndex = 0;
             button1.Text = "Luo Dictionary";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // tb_lisaakey
             // 
@@ -79,6 +80,7 @@
             b_lisaa.TabIndex = 4;
             b_lisaa.Text = "Lisää";
             b_lisaa.UseVisualStyleBackColor = true;
+            b_lisaa.Click += b_lisaa_Click;
             // 
             // b_hae
             // 
@@ -88,6 +90,7 @@
             b_hae.TabIndex = 5;
             b_hae.Text = "Hae";
             b_hae.UseVisualStyleBackColor = true;
+            b_hae.Click += b_hae_Click;
             // 
             // label1
             // 
@@ -125,23 +128,22 @@
             label4.TabIndex = 9;
             label4.Text = "Value:";
             // 
-            // label5
+            // l_haevalue
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ControlLightLight;
-            label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Location = new Point(166, 342);
-            label5.Name = "label5";
-            label5.Size = new Size(52, 22);
-            label5.TabIndex = 10;
-            label5.Text = "label5";
+            l_haevalue.AutoSize = true;
+            l_haevalue.BackColor = SystemColors.ControlLightLight;
+            l_haevalue.BorderStyle = BorderStyle.FixedSingle;
+            l_haevalue.Location = new Point(166, 342);
+            l_haevalue.Name = "l_haevalue";
+            l_haevalue.Size = new Size(2, 22);
+            l_haevalue.TabIndex = 10;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(619, 450);
-            Controls.Add(label5);
+            Controls.Add(l_haevalue);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -170,6 +172,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private Label l_haevalue;
     }
 }
