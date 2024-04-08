@@ -2,8 +2,13 @@ namespace PaintAndMouse
 {
     public partial class Form1 : Form
     {
+        int p_x = 666;
+        int p_y = 222;
 
-        Point piste = new Point(0, 0);
+        //818x497
+        Point piste = new Point();
+
+
 
         public Form1()
         {
@@ -12,6 +17,8 @@ namespace PaintAndMouse
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
+            Point piste = new Point(p_x, p_y);
+
             Graphics Graf = e.Graphics;
 
             //p‰‰n piirto
@@ -41,5 +48,12 @@ namespace PaintAndMouse
                 new SolidBrush(Color.Black), 8, 30);
         }
 
+        private void b_siirra_Click(object sender, EventArgs e)
+        {
+            p_x = Int32.Parse(tb_x.Text);
+            p_y = Int32.Parse(tb_x.Text);
+            Point piste = new Point(p_x, p_y);
+            Invalidate();
+        }
     }
 }
