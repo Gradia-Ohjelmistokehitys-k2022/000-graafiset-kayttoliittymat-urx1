@@ -55,5 +55,45 @@ namespace PaintAndMouse
             Point piste = new Point(p_x, p_y);
             Invalidate();
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+
+            {
+
+                // Talletetaan hiiren klikkauskohdan koordinaatit. Piste (0, 0) 
+
+                // on formin työalueen vasemmassa ylä nurkassa 
+
+                p_x = e.Location.X;
+                p_y = e.Location.Y;
+
+
+
+                // Merkitään formin työalue epäkelvoksi, jolloin saadaan aikaiseksi 
+
+                // paint-eventin signalointi ja tämän jälkeen Paint()-metodin kutsu. 
+
+                Invalidate();
+
+            }
+
+
+        }
+
+
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                p_x = e.Location.X;
+                p_y = e.Location.Y;
+
+                Invalidate();
+
+            }
+        }
     }
 }
