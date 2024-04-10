@@ -28,7 +28,17 @@ namespace File
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenFileDialog OpenFileDlg = new OpenFileDialog();
+            OpenFileDlg.Title = "Open";
+            OpenFileDlg.ShowReadOnly = true;
+            OpenFileDlg.Filter = "Text documents (*.txt)|*.txt|All files|*.*";
 
+            if (OpenFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                EditorFileName = OpenFileDlg.FileName;
+                ReadFile();
+                SetFormTitleText();
+            }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +48,15 @@ namespace File
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFileDialog SaveFileDlg = new SaveFileDialog();
+            SaveFileDlg.Filter = "Text documents (*.txt)|*.txt|All files|*.*";
 
+            if (SaveFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                EditorFileName = SaveFileDlg.FileName;
+                SaveFile();
+                SetFormTitleText();
+            }
         }
 
         private void SetFormTitleText()
