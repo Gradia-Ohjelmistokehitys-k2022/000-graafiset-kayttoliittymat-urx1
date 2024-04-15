@@ -40,6 +40,7 @@
             tiedostoToolStripMenuItem = new ToolStripMenuItem();
             tarkistaPvmToolStripMenuItem = new ToolStripMenuItem();
             suljeToolStripMenuItem = new ToolStripMenuItem();
+            b_lisaatuote = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tiedostoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(544, 28);
+            menuStrip1.Size = new Size(1064, 28);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -138,11 +139,21 @@
             suljeToolStripMenuItem.Text = "Sulje";
             suljeToolStripMenuItem.Click += suljeToolStripMenuItem_Click;
             // 
+            // b_lisaatuote
+            // 
+            b_lisaatuote.Location = new Point(232, 272);
+            b_lisaatuote.Name = "b_lisaatuote";
+            b_lisaatuote.Size = new Size(162, 29);
+            b_lisaatuote.TabIndex = 11;
+            b_lisaatuote.Text = "Lisää tuote";
+            b_lisaatuote.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(544, 366);
+            ClientSize = new Size(1064, 404);
+            Controls.Add(b_lisaatuote);
             Controls.Add(tb_hakupaiva);
             Controls.Add(tb_lukumaara);
             Controls.Add(tb_paino);
@@ -176,5 +187,6 @@
         private ToolStripMenuItem tiedostoToolStripMenuItem;
         private ToolStripMenuItem tarkistaPvmToolStripMenuItem;
         private ToolStripMenuItem suljeToolStripMenuItem;
+        private Button b_lisaatuote;
     }
 }

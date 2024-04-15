@@ -20,7 +20,8 @@ namespace DelegaatitJaEventit
             if (f2 == null)
             {
                 f2 = new Form2();
-                f2.MdiParent = this;
+                //f2.MdiParent = this;
+                //jos ei käytä tätä voi vaihtaa form 1 MdiContainer = false
                 f2.Show();
             }
             else
