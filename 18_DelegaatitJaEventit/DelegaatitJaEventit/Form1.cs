@@ -1,3 +1,5 @@
+using TuoteNS;
+
 namespace DelegaatitJaEventit
 {
     public partial class Form1 : Form
@@ -27,6 +29,23 @@ namespace DelegaatitJaEventit
             else
             {
                 f2.Activate();
+            }
+        }
+
+        private void b_lisaatuote_Click(object sender, EventArgs e)
+        {
+            if (tb_nimi.Text == "" || tb_paino.Text == "" || tb_lukumaara.Text == "" || tb_hakupaiva.Text == "")
+            {
+                MessageBox.Show("Puutteelliset tiedot.");
+            }
+            else
+            {
+                string objNimi = tb_nimi.Text;
+                int objPaino = Int32.Parse(tb_paino.Text);
+                int objLukumaara = Int32.Parse(tb_lukumaara.Text);
+                DateTime objHakupaiva = DateTime.Parse(tb_hakupaiva.Text);
+                Tuote Tuote = new Tuote(objNimi, objPaino, objLukumaara, objHakupaiva);
+                MessageBox.Show("Tuote lisätty");
             }
         }
     }

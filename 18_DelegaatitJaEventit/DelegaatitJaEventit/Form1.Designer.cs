@@ -128,14 +128,14 @@
             // tarkistaPvmToolStripMenuItem
             // 
             tarkistaPvmToolStripMenuItem.Name = "tarkistaPvmToolStripMenuItem";
-            tarkistaPvmToolStripMenuItem.Size = new Size(224, 26);
+            tarkistaPvmToolStripMenuItem.Size = new Size(174, 26);
             tarkistaPvmToolStripMenuItem.Text = "Tarkista pvm";
             tarkistaPvmToolStripMenuItem.Click += tarkistaPvmToolStripMenuItem_Click;
             // 
             // suljeToolStripMenuItem
             // 
             suljeToolStripMenuItem.Name = "suljeToolStripMenuItem";
-            suljeToolStripMenuItem.Size = new Size(224, 26);
+            suljeToolStripMenuItem.Size = new Size(174, 26);
             suljeToolStripMenuItem.Text = "Sulje";
             suljeToolStripMenuItem.Click += suljeToolStripMenuItem_Click;
             // 
@@ -147,6 +147,7 @@
             b_lisaatuote.TabIndex = 11;
             b_lisaatuote.Text = "Lisää tuote";
             b_lisaatuote.UseVisualStyleBackColor = true;
+            b_lisaatuote.Click += b_lisaatuote_Click;
             // 
             // Form1
             // 

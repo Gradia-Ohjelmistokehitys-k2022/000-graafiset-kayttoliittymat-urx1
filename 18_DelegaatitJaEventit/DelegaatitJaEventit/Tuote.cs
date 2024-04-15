@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DelegaatitJaEventit
+//namespace DelegaatitJaEventit
+namespace TuoteNS
 {
     public class Tuote
     {
