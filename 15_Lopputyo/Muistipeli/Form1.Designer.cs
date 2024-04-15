@@ -43,6 +43,7 @@
             pictureBox12 = new PictureBox();
             l_points = new Label();
             l_debug = new Label();
+            l_tries = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -77,7 +78,7 @@
             tableLayoutPanel1.Controls.Add(pictureBox10, 3, 0);
             tableLayoutPanel1.Controls.Add(pictureBox11, 3, 1);
             tableLayoutPanel1.Controls.Add(pictureBox12, 3, 2);
-            tableLayoutPanel1.Location = new Point(67, 51);
+            tableLayoutPanel1.Location = new Point(67, 55);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
@@ -209,11 +210,11 @@
             // l_points
             // 
             l_points.AutoSize = true;
-            l_points.Location = new Point(311, 457);
+            l_points.Location = new Point(293, 456);
             l_points.Name = "l_points";
-            l_points.Size = new Size(17, 20);
+            l_points.Size = new Size(68, 20);
             l_points.TabIndex = 1;
-            l_points.Text = "0";
+            l_points.Text = "Pisteet: 0";
             // 
             // l_debug
             // 
@@ -223,11 +224,22 @@
             l_debug.Size = new Size(0, 20);
             l_debug.TabIndex = 2;
             // 
+            // l_tries
+            // 
+            l_tries.AutoSize = true;
+            l_tries.Location = new Point(262, 19);
+            l_tries.Name = "l_tries";
+            l_tries.Size = new Size(125, 20);
+            l_tries.TabIndex = 3;
+            l_tries.Text = "Yrityksiä jäljellä: 6";
+            l_tries.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(629, 495);
+            Controls.Add(l_tries);
             Controls.Add(l_debug);
             Controls.Add(l_points);
             Controls.Add(tableLayoutPanel1);
@@ -267,5 +279,6 @@
         private PictureBox pictureBox12;
         private Label l_points;
         private Label l_debug;
+        private Label l_tries;
     }
 }

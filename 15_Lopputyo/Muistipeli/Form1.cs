@@ -2,10 +2,13 @@
 using System.Security.Cryptography;
 */
 
+using System.DirectoryServices;
+
 namespace Muistipeli
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -22,42 +25,30 @@ namespace Muistipeli
             pictureBox10.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox10, pb10img);
             pictureBox11.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox11, pb11img);
             pictureBox12.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox12, pb12img);
-
-
-
-
         }
-
 
         private static Random rng = new Random();
 
         int clicks = 0;
         int points = 0;
+        static int tries = 6;
 
         static Image keltainen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\keltainen.png");
-        static Image keltainen2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\keltainen.png");
         static Image musta = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\musta.png");
-        static Image musta2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\musta.png");
         static Image pinkki = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\pinkki.png");
-        static Image pinkki2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\pinkki.png");
         static Image tummapunainen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\tummapunainen.png");
-        static Image tummapunainen2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\tummapunainen.png");
         static Image vaaleasininen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\vaaleasininen.png");
-        static Image vaaleasininen2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\vaaleasininen.png");
         static Image vihrea = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\vihrea.png");
-        static Image vihrea2 = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\vihrea.png");
         static Image valkoinen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli\\kuvia\\valkoinen.png");
 
-        static List<Image> kuvapakka = new List<Image> { keltainen, keltainen2, musta, musta2, pinkki, pinkki2, tummapunainen, tummapunainen2, vaaleasininen, vaaleasininen2, vihrea, vihrea2 };
+        static List<Image> kuvapakka = new List<Image> { keltainen, keltainen, musta, musta, pinkki, pinkki, tummapunainen, tummapunainen, vaaleasininen, vaaleasininen, vihrea, vihrea };
 
-        PictureBox lastClickedBox;
+        PictureBox lastClickedBox = null;
 
         Image lastClickedImg;
 
         static List<Image> kuvapakkaSekoitettu = kuvapakka.OrderBy(_ => rng.Next()).ToList();
 
-        //luvut joilla määrätään mihin pictureboxiin kukin kuva laitetaan
-        //nää pitäis kyl olla listassa tms?
 
         Image pb1img = kuvapakkaSekoitettu[0];
         Image pb2img = kuvapakkaSekoitettu[1];
@@ -73,14 +64,37 @@ namespace Muistipeli
         Image pb12img = kuvapakkaSekoitettu[11];
 
 
-
-
-
-
-
         private void pictureBoxClick(object sender, EventArgs e, PictureBox picbox, Image picboximg)
         {
-            picbox.BackgroundImage = picboximg;
+
+            if (lastClickedBox == null)
+            {
+                picbox.BackgroundImage = picboximg;
+                lastClickedBox = picbox;
+                lastClickedImg = picboximg;
+            }
+            else if (lastClickedBox.BackgroundImage == picboximg)
+            {
+                picbox.BackgroundImage = picboximg;
+                points++;
+                lastClickedBox = null;
+                l_points.Text = "Pisteet: " + points;
+            }
+
+            else
+            {
+                picbox.BackgroundImage = picboximg;
+
+                var timer = new System.Windows.Forms.Timer();
+                timer.Tick += (sender, e) => TimeOut(picbox, lastClickedBox, sender, e);
+                timer.Interval = 2000;
+                timer.Start();
+
+                tries--;
+                l_tries.Text = "Yrityksiä jäljellä: " + tries;
+            }
+
+
         }
 
             /*
@@ -130,19 +144,14 @@ namespace Muistipeli
             }
         }
         */
-        /*
-        static void TimeOut(PictureBox picbox, object sender, EventArgs e)
+        
+        static void TimeOut(PictureBox picbox, PictureBox picbox2, object sender, EventArgs e)
         {
             picbox.BackgroundImage = valkoinen;
+            picbox2.BackgroundImage = valkoinen;            
         }
 
-                NÄÄ OLI CLICK FUNKTION SISÄLLÄ!
-                /* 
-                var timer = new System.Windows.Forms.Timer();
-                timer.Tick += (sender, e) => TimeOut(picbox, sender, e);
-                timer.Interval = 2000;
-                timer.Start();
-                */
+
 
 
 
