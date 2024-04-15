@@ -30,12 +30,17 @@
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            tb_nimi = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            tb_paino = new TextBox();
+            tb_lukumaara = new TextBox();
+            tb_hakupaiva = new TextBox();
+            menuStrip1 = new MenuStrip();
+            tiedostoToolStripMenuItem = new ToolStripMenuItem();
+            tarkistaPvmToolStripMenuItem = new ToolStripMenuItem();
+            suljeToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -56,12 +61,12 @@
             label2.TabIndex = 1;
             label2.Text = "Viimeinen hakupäivä";
             // 
-            // textBox1
+            // tb_nimi
             // 
-            textBox1.Location = new Point(232, 105);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 27);
-            textBox1.TabIndex = 2;
+            tb_nimi.Location = new Point(232, 105);
+            tb_nimi.Name = "tb_nimi";
+            tb_nimi.Size = new Size(200, 27);
+            tb_nimi.TabIndex = 2;
             // 
             // label3
             // 
@@ -81,42 +86,78 @@
             label4.TabIndex = 4;
             label4.Text = "Tuotteen lukumäärä";
             // 
-            // textBox2
+            // tb_paino
             // 
-            textBox2.Location = new Point(232, 146);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 27);
-            textBox2.TabIndex = 5;
+            tb_paino.Location = new Point(232, 146);
+            tb_paino.Name = "tb_paino";
+            tb_paino.Size = new Size(200, 27);
+            tb_paino.TabIndex = 5;
             // 
-            // textBox3
+            // tb_lukumaara
             // 
-            textBox3.Location = new Point(232, 185);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(200, 27);
-            textBox3.TabIndex = 6;
+            tb_lukumaara.Location = new Point(232, 185);
+            tb_lukumaara.Name = "tb_lukumaara";
+            tb_lukumaara.Size = new Size(200, 27);
+            tb_lukumaara.TabIndex = 6;
             // 
-            // textBox4
+            // tb_hakupaiva
             // 
-            textBox4.Location = new Point(232, 226);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(200, 27);
-            textBox4.TabIndex = 7;
+            tb_hakupaiva.Location = new Point(232, 226);
+            tb_hakupaiva.Name = "tb_hakupaiva";
+            tb_hakupaiva.Size = new Size(200, 27);
+            tb_hakupaiva.TabIndex = 7;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { tiedostoToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(544, 28);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // tiedostoToolStripMenuItem
+            // 
+            tiedostoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tarkistaPvmToolStripMenuItem, suljeToolStripMenuItem });
+            tiedostoToolStripMenuItem.Name = "tiedostoToolStripMenuItem";
+            tiedostoToolStripMenuItem.Size = new Size(81, 24);
+            tiedostoToolStripMenuItem.Text = "Tiedosto";
+            // 
+            // tarkistaPvmToolStripMenuItem
+            // 
+            tarkistaPvmToolStripMenuItem.Name = "tarkistaPvmToolStripMenuItem";
+            tarkistaPvmToolStripMenuItem.Size = new Size(224, 26);
+            tarkistaPvmToolStripMenuItem.Text = "Tarkista pvm";
+            tarkistaPvmToolStripMenuItem.Click += tarkistaPvmToolStripMenuItem_Click;
+            // 
+            // suljeToolStripMenuItem
+            // 
+            suljeToolStripMenuItem.Name = "suljeToolStripMenuItem";
+            suljeToolStripMenuItem.Size = new Size(224, 26);
+            suljeToolStripMenuItem.Text = "Sulje";
+            suljeToolStripMenuItem.Click += suljeToolStripMenuItem_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(544, 366);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(tb_hakupaiva);
+            Controls.Add(tb_lukumaara);
+            Controls.Add(tb_paino);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(tb_nimi);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,11 +166,15 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox tb_nimi;
         private Label label3;
         private Label label4;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tb_paino;
+        private TextBox tb_lukumaara;
+        private TextBox tb_hakupaiva;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem tiedostoToolStripMenuItem;
+        private ToolStripMenuItem tarkistaPvmToolStripMenuItem;
+        private ToolStripMenuItem suljeToolStripMenuItem;
     }
 }
