@@ -47,6 +47,8 @@ namespace Muistipeli
 
         PictureBox lastClickedBox = null;
 
+        Kortti lastClickedKortti;
+
         Image lastClickedImg;
 
         static List<Kortti> kuvapakkaSekoitettu = kuvapakka.OrderBy(_ => rng.Next()).ToList();
@@ -65,12 +67,35 @@ namespace Muistipeli
         Kortti k11 = kuvapakkaSekoitettu[10];
         Kortti k12 = kuvapakkaSekoitettu[11];
 
+        //pictureboxilla pit‰‰ olla oma class...
 
         private void pictureBoxClick(object sender, EventArgs e, PictureBox picbox, Kortti kortti)
         {
-            picbox.BackgroundImage = kortti._etukuva;
-            clicks++;
-            label1.Text = clicks.ToString();
+        if (kortti._loydetty == false)
+            {
+                picbox.BackgroundImage = kortti._etukuva;
+
+                clicks++;
+                label1.Text = clicks.ToString();
+
+                lastClickedKortti = kortti;
+            }
+        if (clicks == 2 && kortti._loydetty == false && lastClickedKortti._etukuva != kortti._etukuva)
+            {
+                clicks++;
+                picbox.BackgroundImage = kortti._etukuva;
+
+                clicks++;
+                label1.Text = clicks.ToString();
+
+                lastClickedKortti = kortti;
+
+
+            }
+
+                
+            
+
 
 
             /*
