@@ -73,8 +73,16 @@ namespace Muistipeli
                 lastClickedBox = picbox;
                 lastClickedImg = picboximg;
             }
+            if (lastClickedBox.BackgroundImage != picboximg && clicks < 2)
+            {
+                clicks++;
+                picbox.BackgroundImage = picboximg;
+                tries--;
+                l_tries.Text = "Yrityksiä jäljellä: " + tries;
+            }
             else if (lastClickedBox.BackgroundImage == picboximg)
             {
+                clicks++;
                 picbox.BackgroundImage = picboximg;
                 points++;
                 lastClickedBox = null;
@@ -84,7 +92,6 @@ namespace Muistipeli
             else
             {
                 picbox.BackgroundImage = picboximg;
-
                 var timer = new System.Windows.Forms.Timer();
                 timer.Tick += (sender, e) => TimeOut(picbox, lastClickedBox, sender, e);
                 timer.Interval = 2000;
