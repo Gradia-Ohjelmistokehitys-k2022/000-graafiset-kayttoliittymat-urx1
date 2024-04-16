@@ -35,12 +35,12 @@
             label4 = new Label();
             tb_paino = new TextBox();
             tb_lukumaara = new TextBox();
-            tb_hakupaiva = new TextBox();
             menuStrip1 = new MenuStrip();
             tiedostoToolStripMenuItem = new ToolStripMenuItem();
             tarkistaPvmToolStripMenuItem = new ToolStripMenuItem();
             suljeToolStripMenuItem = new ToolStripMenuItem();
             b_lisaatuote = new Button();
+            dp_hakupvm = new DateTimePicker();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             // 
             tb_nimi.Location = new Point(232, 105);
             tb_nimi.Name = "tb_nimi";
-            tb_nimi.Size = new Size(200, 27);
+            tb_nimi.Size = new Size(250, 27);
             tb_nimi.TabIndex = 2;
             // 
             // label3
@@ -91,22 +91,15 @@
             // 
             tb_paino.Location = new Point(232, 146);
             tb_paino.Name = "tb_paino";
-            tb_paino.Size = new Size(200, 27);
+            tb_paino.Size = new Size(250, 27);
             tb_paino.TabIndex = 5;
             // 
             // tb_lukumaara
             // 
             tb_lukumaara.Location = new Point(232, 185);
             tb_lukumaara.Name = "tb_lukumaara";
-            tb_lukumaara.Size = new Size(200, 27);
+            tb_lukumaara.Size = new Size(250, 27);
             tb_lukumaara.TabIndex = 6;
-            // 
-            // tb_hakupaiva
-            // 
-            tb_hakupaiva.Location = new Point(232, 226);
-            tb_hakupaiva.Name = "tb_hakupaiva";
-            tb_hakupaiva.Size = new Size(200, 27);
-            tb_hakupaiva.TabIndex = 7;
             // 
             // menuStrip1
             // 
@@ -114,7 +107,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tiedostoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1064, 28);
+            menuStrip1.Size = new Size(618, 28);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -149,13 +142,20 @@
             b_lisaatuote.UseVisualStyleBackColor = true;
             b_lisaatuote.Click += b_lisaatuote_Click;
             // 
+            // dp_hakupvm
+            // 
+            dp_hakupvm.Location = new Point(232, 221);
+            dp_hakupvm.Name = "dp_hakupvm";
+            dp_hakupvm.Size = new Size(250, 27);
+            dp_hakupvm.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1064, 404);
+            ClientSize = new Size(618, 404);
+            Controls.Add(dp_hakupvm);
             Controls.Add(b_lisaatuote);
-            Controls.Add(tb_hakupaiva);
             Controls.Add(tb_lukumaara);
             Controls.Add(tb_paino);
             Controls.Add(label4);
@@ -164,7 +164,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
-            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
@@ -183,11 +182,11 @@
         private Label label4;
         private TextBox tb_paino;
         private TextBox tb_lukumaara;
-        private TextBox tb_hakupaiva;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem tiedostoToolStripMenuItem;
         private ToolStripMenuItem tarkistaPvmToolStripMenuItem;
         private ToolStripMenuItem suljeToolStripMenuItem;
         private Button b_lisaatuote;
+        private DateTimePicker dp_hakupvm;
     }
 }

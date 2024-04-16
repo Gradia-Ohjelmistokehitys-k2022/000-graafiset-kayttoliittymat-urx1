@@ -22,8 +22,7 @@ namespace DelegaatitJaEventit
             if (f2 == null)
             {
                 f2 = new Form2();
-                //f2.MdiParent = this;
-                //jos ei käytä tätä voi vaihtaa form 1 MdiContainer = false
+                //f2.MdiParent = this; HUOM jos ei käytä tätä voi vaihtaa form 1 MdiContainer = false
                 f2.Show();
             }
             else
@@ -34,7 +33,7 @@ namespace DelegaatitJaEventit
 
         private void b_lisaatuote_Click(object sender, EventArgs e)
         {
-            if (tb_nimi.Text == "" || tb_paino.Text == "" || tb_lukumaara.Text == "" || tb_hakupaiva.Text == "")
+            if (tb_nimi.Text == "" || tb_paino.Text == "" || tb_lukumaara.Text == "" || dp_hakupvm.Value == null)
             {
                 MessageBox.Show("Puutteelliset tiedot.");
             }
@@ -43,9 +42,9 @@ namespace DelegaatitJaEventit
                 string objNimi = tb_nimi.Text;
                 int objPaino = Int32.Parse(tb_paino.Text);
                 int objLukumaara = Int32.Parse(tb_lukumaara.Text);
-                DateTime objHakupaiva = DateTime.Parse(tb_hakupaiva.Text);
+                DateTime objHakupaiva = dp_hakupvm.Value;
                 Tuote Tuote = new Tuote(objNimi, objPaino, objLukumaara, objHakupaiva);
-                MessageBox.Show("Tuote lisätty");
+                MessageBox.Show("Tuote lisätty " + dp_hakupvm.Value.ToString());
             }
         }
     }
