@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -45,6 +46,7 @@
             l_debug = new Label();
             l_tries = new Label();
             label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -256,6 +258,11 @@
             label1.TabIndex = 4;
             label1.Text = "label1";
             // 
+            // timer1
+            // 
+            timer1.Interval = 1500;
+            timer1.Tick += timer1_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -304,5 +311,6 @@
         private Label l_debug;
         private Label l_tries;
         private Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

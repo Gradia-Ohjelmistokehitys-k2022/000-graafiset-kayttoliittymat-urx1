@@ -12,6 +12,9 @@ namespace Muistipeli
 
         Random random = new Random();
 
+        PictureBox firstBoxClick = null;
+        PictureBox secondBoxClick = null;
+
         public Form1()
         {
             InitializeComponent();
@@ -113,135 +116,164 @@ namespace Muistipeli
 
         private void pictureBoxClick(object sender, EventArgs e)
         {
+            if (timer1.Enabled == true)
+            {
+                return;
+            }
+            
             PictureBox clickedBox = sender as PictureBox;
 
-            if (clickedBox != null) 
+            if (clickedBox != null)
             {
-                clickedBox.Image = null;
+                if (clickedBox.Image == null)
+                {
+                    return;
+                }
+                if (firstBoxClick == null)
+                {
+                    firstBoxClick = clickedBox;
+                    firstBoxClick.Image = null;
+                    return;
+                }
+                secondBoxClick = clickedBox;
+                secondBoxClick.Image = null;
+                timer1.Start();
             }
-
-        /*
-        if (kortti._loydetty == false)
-            {
-                picbox.BackgroundImage = kortti._etukuva;
-
-                clicks++;
-                label1.Text = clicks.ToString();
-
-                lastClickedKortti = kortti;
-            }
-        if (clicks == 2 && kortti._loydetty == false && lastClickedKortti._etukuva != kortti._etukuva)
-            {
-                clicks++;
-                picbox.BackgroundImage = kortti._etukuva;
-
-                clicks++;
-                label1.Text = clicks.ToString();
-
-                lastClickedKortti = kortti;
-
-
-            }
-
-                
-            
-
-
 
             /*
-            if (lastClickedBox == null)
-            {
-                picbox.BackgroundImage = picboximg;
-                lastClickedBox = picbox;
-                lastClickedImg = picboximg;
-            }
-            if (lastClickedBox.BackgroundImage != picboximg && clicks < 2)
-            {
-                clicks++;
-                picbox.BackgroundImage = picboximg;
-                tries--;
-                l_tries.Text = "Yrityksiä jäljellä: " + tries;
-            }
-            else if (lastClickedBox.BackgroundImage == picboximg)
-            {
-                clicks++;
-                picbox.BackgroundImage = picboximg;
-                points++;
-                lastClickedBox = null;
-                l_points.Text = "Pisteet: " + points;
-            }
+            if (kortti._loydetty == false)
+                {
+                    picbox.BackgroundImage = kortti._etukuva;
 
-            else
-            {
-                picbox.BackgroundImage = picboximg;
-                var timer = new System.Windows.Forms.Timer();
-                timer.Tick += (sender, e) => TimeOut(picbox, lastClickedBox, sender, e);
-                timer.Interval = 2000;
-                timer.Start();
+                    clicks++;
+                    label1.Text = clicks.ToString();
 
-                tries--;
-                l_tries.Text = "Yrityksiä jäljellä: " + tries;
-            }
-            */
+                    lastClickedKortti = kortti;
+                }
+            if (clicks == 2 && kortti._loydetty == false && lastClickedKortti._etukuva != kortti._etukuva)
+                {
+                    clicks++;
+                    picbox.BackgroundImage = kortti._etukuva;
 
-    }
+                    clicks++;
+                    label1.Text = clicks.ToString();
 
-    /*
-    if (lastClickedBox == null) 
-    { 
-        picbox.BackgroundImage = picboximg;
-        lastClickedBox = picbox;
-        lastClickedImg = picboximg;
-
-    }
-    if (clicks <= 1 && lastClickedImg == picboximg)
-    {
-        picbox.BackgroundImage = picboximg;
-        lastClickedImg = pb1img;
-        points++;
-        l_points.Text = "Pisteet: " + points.ToString();
-    }
-
-    if (lastClickedBox != null && lastClickedImg != picboximg) 
-    {
-        lastClickedBox.BackgroundImage = valkoinen;
-        picbox.BackgroundImage = picboximg;
-        lastClickedBox = picbox;
-        lastClickedImg = picboximg;
-    }
-    */
+                    lastClickedKortti = kortti;
 
 
-    /*
-    private void pictureBox1_Click(object sender, EventArgs e)
-    {
-        if (clicks <= 1) 
-        {
-            pictureBox1.BackgroundImage = pb1img;
-            lastClicked = pb1img;
-            var timer = new System.Windows.Forms.Timer();
-            timer.Tick += (sender, e) => TimeOut(pictureBox1, sender, e);
-            timer.Interval = 2000;
-            timer.Start();
+                }
+
+
+
+
+
+
+                /*
+                if (lastClickedBox == null)
+                {
+                    picbox.BackgroundImage = picboximg;
+                    lastClickedBox = picbox;
+                    lastClickedImg = picboximg;
+                }
+                if (lastClickedBox.BackgroundImage != picboximg && clicks < 2)
+                {
+                    clicks++;
+                    picbox.BackgroundImage = picboximg;
+                    tries--;
+                    l_tries.Text = "Yrityksiä jäljellä: " + tries;
+                }
+                else if (lastClickedBox.BackgroundImage == picboximg)
+                {
+                    clicks++;
+                    picbox.BackgroundImage = picboximg;
+                    points++;
+                    lastClickedBox = null;
+                    l_points.Text = "Pisteet: " + points;
+                }
+
+                else
+                {
+                    picbox.BackgroundImage = picboximg;
+                    var timer = new System.Windows.Forms.Timer();
+                    timer.Tick += (sender, e) => TimeOut(picbox, lastClickedBox, sender, e);
+                    timer.Interval = 2000;
+                    timer.Start();
+
+                    tries--;
+                    l_tries.Text = "Yrityksiä jäljellä: " + tries;
+                }
+                */
+
         }
-        if (clicks <= 1 && lastClicked == pb1img)
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = pb1img;
-            lastClicked = pb1img;
+            timer1.Stop();
+
+            firstBoxClick.Image = valkoinen;
+            secondBoxClick.Image = valkoinen;
+
+            firstBoxClick = null;
+            secondBoxClick = null;
+
+        }
+
+        /*
+        if (lastClickedBox == null) 
+        { 
+            picbox.BackgroundImage = picboximg;
+            lastClickedBox = picbox;
+            lastClickedImg = picboximg;
+
+        }
+        if (clicks <= 1 && lastClickedImg == picboximg)
+        {
+            picbox.BackgroundImage = picboximg;
+            lastClickedImg = pb1img;
             points++;
             l_points.Text = "Pisteet: " + points.ToString();
         }
-    }
-    
 
-    static void TimeOut(PictureBox picbox, PictureBox picbox2, object sender, EventArgs e)
+        if (lastClickedBox != null && lastClickedImg != picboximg) 
         {
-            picbox.BackgroundImage = valkoinen;
-            picbox2.BackgroundImage = valkoinen;
+            lastClickedBox.BackgroundImage = valkoinen;
+            picbox.BackgroundImage = picboximg;
+            lastClickedBox = picbox;
+            lastClickedImg = picboximg;
+        }
+        */
+
+
+        /*
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (clicks <= 1) 
+            {
+                pictureBox1.BackgroundImage = pb1img;
+                lastClicked = pb1img;
+                var timer = new System.Windows.Forms.Timer();
+                timer.Tick += (sender, e) => TimeOut(pictureBox1, sender, e);
+                timer.Interval = 2000;
+                timer.Start();
+            }
+            if (clicks <= 1 && lastClicked == pb1img)
+            {
+                pictureBox1.BackgroundImage = pb1img;
+                lastClicked = pb1img;
+                points++;
+                l_points.Text = "Pisteet: " + points.ToString();
+            }
         }
 
 
-    */
+        static void TimeOut(PictureBox picbox, PictureBox picbox2, object sender, EventArgs e)
+            {
+                picbox.BackgroundImage = valkoinen;
+                picbox2.BackgroundImage = valkoinen;
+            }
+
+
+        */
 
 
 
