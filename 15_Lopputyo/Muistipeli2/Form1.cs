@@ -33,58 +33,13 @@ namespace Muistipeli
             pictureBox11.Click += (sender, e) => pictureBoxClick(sender, e);
             pictureBox12.Click += (sender, e) => pictureBoxClick(sender, e);
 
-            /*
-            pictureBox1.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox1, k1);
-            pictureBox2.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox2, k2);
-            pictureBox3.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox3, k3);
-            pictureBox4.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox4, k4);
-            pictureBox5.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox5, k5);
-            pictureBox6.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox6, k6);
-            pictureBox7.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox7, k7);
-            pictureBox8.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox8, k8);
-            pictureBox9.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox9, k9);
-            pictureBox10.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox10, k10);
-            pictureBox11.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox11, k11);
-            pictureBox12.Click += (sender, e) => pictureBoxClick(sender, e, pictureBox12, k12);
-        */
         }
+
         private static Random rng = new Random();
 
         int clicks = 0;
         int points = 0;
         static int tries = 6;
-
-        /*
-        static Kortti keltainen = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\keltainen.png"));
-        static Kortti musta = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\musta.png"));
-        static Kortti pinkki = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\pinkki.png"));
-        static Kortti tummapunainen = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\tummapunainen.png"));
-        static Kortti vaaleasininen = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\vaaleasininen.png"));
-        static Kortti vihrea = new Kortti(Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\MuistipeliExp\\kuvia\\vihrea.png"));
-
-        static List<Kortti> kuvapakka = new List<Kortti> { keltainen, keltainen, musta, musta, pinkki, pinkki, tummapunainen, tummapunainen, vaaleasininen, vaaleasininen, vihrea, vihrea };
-
-        PictureBox lastClickedBox = null;
-
-        Kortti lastClickedKortti;
-
-        Image lastClickedImg;
-
-        static List<Kortti> kuvapakkaSekoitettu = kuvapakka.OrderBy(_ => rng.Next()).ToList();
-
-        Kortti k1 = kuvapakkaSekoitettu[0];
-        Kortti k2 = kuvapakkaSekoitettu[1];
-        Kortti k3 = kuvapakkaSekoitettu[2];
-        Kortti k4 = kuvapakkaSekoitettu[3];
-        Kortti k5 = kuvapakkaSekoitettu[4];
-        Kortti k6 = kuvapakkaSekoitettu[5];
-        Kortti k7 = kuvapakkaSekoitettu[6];
-        Kortti k8 = kuvapakkaSekoitettu[7];
-        Kortti k9 = kuvapakkaSekoitettu[8];
-        Kortti k10 = kuvapakkaSekoitettu[9];
-        Kortti k11 = kuvapakkaSekoitettu[10];
-        Kortti k12 = kuvapakkaSekoitettu[11];
-        */
 
         static Image keltainen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2\\kuvia\\keltainen.png");
         static Image musta = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2\\kuvia\\musta.png");
@@ -95,9 +50,6 @@ namespace Muistipeli
         static Image valkoinen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2\\kuvia\\valkoinen.png");
 
         static List<Image> kuvapakka = new List<Image> { keltainen, keltainen, musta, musta, pinkki, pinkki, tummapunainen, tummapunainen, vaaleasininen, vaaleasininen, vihrea, vihrea };
-
-        //.image = kääntämätön kortti, .backgroundimage = käännetty kortti
-        //if .image = null, kortti on ratkottu
 
         private void JaaKortit()
         {
@@ -137,6 +89,14 @@ namespace Muistipeli
                 }
                 secondBoxClick = clickedBox;
                 secondBoxClick.Image = null;
+
+                if (firstBoxClick.Image == secondBoxClick.Image)
+                {
+                    firstBoxClick = null;
+                    secondBoxClick = null;
+                    return;
+                }
+
                 timer1.Start();
             }
 
