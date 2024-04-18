@@ -66,6 +66,24 @@ namespace Muistipeli
             }
         }
 
+        private void Voitto()
+        {
+            foreach (Control c in tableLayoutPanel1.Controls)
+            {
+                PictureBox pictureBox = c as PictureBox;
+
+                if ( pictureBox != null ) 
+                { 
+                    if (pictureBox.Image != null)
+                    {
+                        return;
+                    }
+                }
+            }
+            MessageBox.Show("voiti pelin jes");
+            Close();
+        }
+
         private void pictureBoxClick(object sender, EventArgs e)
         {
             if (timer1.Enabled == true)
@@ -81,16 +99,22 @@ namespace Muistipeli
                 {
                     return;
                 }
+
+
                 if (firstBoxClick == null)
                 {
                     firstBoxClick = clickedBox;
                     firstBoxClick.Image = null;
                     return;
                 }
+
+
                 secondBoxClick = clickedBox;
                 secondBoxClick.Image = null;
 
-                if (firstBoxClick.Image == secondBoxClick.Image)
+                Voitto();
+
+                if (firstBoxClick.BackgroundImage == secondBoxClick.BackgroundImage)
                 {
                     firstBoxClick = null;
                     secondBoxClick = null;
@@ -99,71 +123,6 @@ namespace Muistipeli
 
                 timer1.Start();
             }
-
-            /*
-            if (kortti._loydetty == false)
-                {
-                    picbox.BackgroundImage = kortti._etukuva;
-
-                    clicks++;
-                    label1.Text = clicks.ToString();
-
-                    lastClickedKortti = kortti;
-                }
-            if (clicks == 2 && kortti._loydetty == false && lastClickedKortti._etukuva != kortti._etukuva)
-                {
-                    clicks++;
-                    picbox.BackgroundImage = kortti._etukuva;
-
-                    clicks++;
-                    label1.Text = clicks.ToString();
-
-                    lastClickedKortti = kortti;
-
-
-                }
-
-
-
-
-
-
-                /*
-                if (lastClickedBox == null)
-                {
-                    picbox.BackgroundImage = picboximg;
-                    lastClickedBox = picbox;
-                    lastClickedImg = picboximg;
-                }
-                if (lastClickedBox.BackgroundImage != picboximg && clicks < 2)
-                {
-                    clicks++;
-                    picbox.BackgroundImage = picboximg;
-                    tries--;
-                    l_tries.Text = "Yrityksiä jäljellä: " + tries;
-                }
-                else if (lastClickedBox.BackgroundImage == picboximg)
-                {
-                    clicks++;
-                    picbox.BackgroundImage = picboximg;
-                    points++;
-                    lastClickedBox = null;
-                    l_points.Text = "Pisteet: " + points;
-                }
-
-                else
-                {
-                    picbox.BackgroundImage = picboximg;
-                    var timer = new System.Windows.Forms.Timer();
-                    timer.Tick += (sender, e) => TimeOut(picbox, lastClickedBox, sender, e);
-                    timer.Interval = 2000;
-                    timer.Start();
-
-                    tries--;
-                    l_tries.Text = "Yrityksiä jäljellä: " + tries;
-                }
-                */
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
