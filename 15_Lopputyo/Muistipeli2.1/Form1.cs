@@ -81,7 +81,7 @@ namespace Muistipeli
                 }
             }
 
-            MessageBox.Show("voiti pelin jes");
+            MessageBox.Show("voitit pelin jes");
             Close();
         }
 
