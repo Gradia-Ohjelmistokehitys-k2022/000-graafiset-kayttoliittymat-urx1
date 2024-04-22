@@ -47,6 +47,13 @@ namespace Muistipeli
         int clicks = 0;
         int points = 0;
         static int tries = 6;
+        int clickCounter = 0;
+        int turnCounter = 0;
+        int roundCounter = 1;
+        int p1pts = 0;
+        int p2pts = 0;
+        bool p1turn = true;
+        bool p2turn = false;
 
         static Image keltainen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2.2\\kuvia\\keltainen.png");
         static Image musta = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2.2\\kuvia\\musta.png");
@@ -75,7 +82,6 @@ namespace Muistipeli
                 }
             }
         }
-
         private void Voitto()
         {
             foreach (Control c in tableLayoutPanel1.Controls)
@@ -90,49 +96,119 @@ namespace Muistipeli
                     }
                 }
             }
+            if (p1pts > p2pts)
+            {
+                MessageBox.Show("Pelaaja 1 voitti pelin " + p1pts.ToString() + " pisteellä!");
+                Close();
+            }
+            else if (p1pts < p2pts)
+            {
+                MessageBox.Show("Pelaaja 2 voitti pelin " + p2pts.ToString() + " pisteellä!");
+                Close();
+            }
+            else if (p1pts == p2pts)
+            {
+                MessageBox.Show("Tasapeli! Olette molemmat voittajia!");
+            }
 
-            MessageBox.Show("voitit pelin jes");
-            Close();
         }
 
         private void pictureBoxClick(object sender, EventArgs e)
         {
-            if (timer1.Enabled == true)
+            if (timer1.Enabled == true) //timer pyörii, klikkaus ignoreen
             {
                 return;
             }
 
             PictureBox clickedBox = sender as PictureBox;
 
-            if (clickedBox != null)
+            if (clickedBox != null) //jos jotain on jo klikattu
             {
-                if (clickedBox.Image == null)
+                if (clickedBox.Image == null) //jos kyseinen ruutu on jo klikattu, klikkaus ignoreen
                 {
                     return;
                 }
 
-                if (firstBoxClick == null)
+                if (firstBoxClick == null)  //EKA KLIKKAUS, lisätään +1 clickCounteriin
                 {
                     firstBoxClick = clickedBox;
                     firstBoxClick.Image = null;
+                    clickCounter++;
+                    clickCheck();
                     return;
                 }
 
-                secondBoxClick = clickedBox;
+                secondBoxClick = clickedBox; //TOKA KLIKKAUS EI PARIA
                 secondBoxClick.Image = null;
+                //changeTurn();
+                //clickCounter++;
+                //clickCheck();
 
-                Voitto();
+                //Voitto();
 
                 if (firstBoxClick.BackgroundImage == secondBoxClick.BackgroundImage)
                 {
                     firstBoxClick = null;
                     secondBoxClick = null;
+                    if (p1turn == true)
+                    {
+                        p1pts++;
+                        l_p1pts.Text = p1pts.ToString();
+                        changeTurn();
+                        return;
+                    }
+                    if (p2turn == true) 
+                    {
+                        p2pts++;
+                        l_p2pts.Text = p2pts.ToString();
+                        changeTurn();
+                        return;
+                    }
+
                     return;
                 }
+                Voitto();
+
 
                 timer1.Start();
 
             }
+        }
+
+        private void changeTurn()
+        {
+            clickCounter = 0;
+
+            if (p1turn == true)
+            {
+                p1turn = false;
+                p2turn = true;
+                l_vuoro.Text = "Vuoro: Pelaaja 2";
+            }
+            else if (p2turn == true)
+            {
+                p2turn = false;
+                p1turn = true;
+                l_vuoro.Text = "Vuoro: Pelaaja 1";
+            }
+            /*
+            else
+            {
+                return;
+            }
+            */
+        }
+
+        private void clickCheck()
+        {
+            if (clickCounter == 2)
+            {
+                label1.Text = clickCounter.ToString();
+                clickCounter = 0;
+                changeTurn();
+            }
+            label1.Text = clickCounter.ToString();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -142,6 +218,9 @@ namespace Muistipeli
 
         firstBoxClick.Image = valkoinen;
         secondBoxClick.Image = valkoinen;
+
+            clickCounter++;
+            clickCheck();
 
         firstBoxClick = null;
         secondBoxClick = null;

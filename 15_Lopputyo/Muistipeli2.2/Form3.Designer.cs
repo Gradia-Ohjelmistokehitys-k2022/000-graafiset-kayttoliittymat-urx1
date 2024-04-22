@@ -51,6 +51,9 @@
             pictureBox15 = new PictureBox();
             pictureBox16 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            l_p1pts = new Label();
+            l_p2pts = new Label();
+            l_vuoro = new Label();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -73,7 +76,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(127, 53);
+            label1.Location = new Point(12, 34);
             label1.Name = "label1";
             label1.Size = new Size(50, 20);
             label1.TabIndex = 14;
@@ -82,7 +85,7 @@
             // l_tries
             // 
             l_tries.AutoSize = true;
-            l_tries.Location = new Point(365, 55);
+            l_tries.Location = new Point(12, 73);
             l_tries.Name = "l_tries";
             l_tries.Size = new Size(125, 20);
             l_tries.TabIndex = 13;
@@ -129,7 +132,7 @@
             tableLayoutPanel1.Controls.Add(pictureBox14, 1, 3);
             tableLayoutPanel1.Controls.Add(pictureBox15, 2, 3);
             tableLayoutPanel1.Controls.Add(pictureBox16, 3, 3);
-            tableLayoutPanel1.Location = new Point(170, 97);
+            tableLayoutPanel1.Location = new Point(172, 95);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
@@ -320,11 +323,41 @@
             timer1.Interval = 1500;
             timer1.Tick += timer1_Tick;
             // 
+            // l_p1pts
+            // 
+            l_p1pts.AutoSize = true;
+            l_p1pts.Location = new Point(246, 25);
+            l_p1pts.Name = "l_p1pts";
+            l_p1pts.Size = new Size(81, 20);
+            l_p1pts.TabIndex = 15;
+            l_p1pts.Text = "P1 pisteet: ";
+            // 
+            // l_p2pts
+            // 
+            l_p2pts.AutoSize = true;
+            l_p2pts.Location = new Point(484, 22);
+            l_p2pts.Name = "l_p2pts";
+            l_p2pts.Size = new Size(81, 20);
+            l_p2pts.TabIndex = 16;
+            l_p2pts.Text = "P2 pisteet: ";
+            // 
+            // l_vuoro
+            // 
+            l_vuoro.AutoSize = true;
+            l_vuoro.Location = new Point(357, 55);
+            l_vuoro.Name = "l_vuoro";
+            l_vuoro.Size = new Size(119, 20);
+            l_vuoro.TabIndex = 17;
+            l_vuoro.Text = "Vuoro: Pelaaja 1 ";
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 629);
+            Controls.Add(l_vuoro);
+            Controls.Add(l_p2pts);
+            Controls.Add(l_p1pts);
             Controls.Add(label1);
             Controls.Add(l_tries);
             Controls.Add(l_debug);
@@ -377,5 +410,8 @@
         private PictureBox pictureBox15;
         private PictureBox pictureBox16;
         private System.Windows.Forms.Timer timer1;
+        private Label l_p1pts;
+        private Label l_p2pts;
+        private Label l_vuoro;
     }
 }
