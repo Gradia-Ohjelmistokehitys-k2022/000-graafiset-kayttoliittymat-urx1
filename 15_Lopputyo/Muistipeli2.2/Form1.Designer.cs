@@ -89,11 +89,13 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(3, 3);
+            pictureBox1.MaximumSize = new Size(100, 100);
+            pictureBox1.MinimumSize = new Size(100, 100);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 111);
+            pictureBox1.Size = new Size(100, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -101,11 +103,13 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(129, 3);
+            pictureBox2.MaximumSize = new Size(100, 100);
+            pictureBox2.MinimumSize = new Size(100, 100);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(120, 111);
+            pictureBox2.Size = new Size(100, 100);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -113,11 +117,13 @@
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
             pictureBox3.Location = new Point(255, 3);
+            pictureBox3.MaximumSize = new Size(100, 100);
+            pictureBox3.MinimumSize = new Size(100, 100);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(120, 111);
+            pictureBox3.Size = new Size(100, 100);
             pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -125,11 +131,13 @@
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
             pictureBox4.Location = new Point(3, 130);
+            pictureBox4.MaximumSize = new Size(100, 100);
+            pictureBox4.MinimumSize = new Size(100, 100);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(120, 111);
+            pictureBox4.Size = new Size(100, 100);
             pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
@@ -137,11 +145,13 @@
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox5.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
             pictureBox5.Location = new Point(129, 130);
+            pictureBox5.MaximumSize = new Size(100, 100);
+            pictureBox5.MinimumSize = new Size(100, 100);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(120, 111);
+            pictureBox5.Size = new Size(100, 100);
             pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
@@ -149,11 +159,13 @@
             // pictureBox6
             // 
             pictureBox6.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox6.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox6.BorderStyle = BorderStyle.FixedSingle;
             pictureBox6.Location = new Point(255, 130);
+            pictureBox6.MaximumSize = new Size(100, 100);
+            pictureBox6.MinimumSize = new Size(100, 100);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(120, 111);
+            pictureBox6.Size = new Size(100, 100);
             pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
@@ -161,11 +173,13 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox7.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.BorderStyle = BorderStyle.FixedSingle;
             pictureBox7.Location = new Point(3, 257);
+            pictureBox7.MaximumSize = new Size(100, 100);
+            pictureBox7.MinimumSize = new Size(100, 100);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(120, 113);
+            pictureBox7.Size = new Size(100, 100);
             pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
@@ -173,11 +187,13 @@
             // pictureBox8
             // 
             pictureBox8.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox8.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox8.BorderStyle = BorderStyle.FixedSingle;
             pictureBox8.Location = new Point(129, 257);
+            pictureBox8.MaximumSize = new Size(100, 100);
+            pictureBox8.MinimumSize = new Size(100, 100);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(120, 113);
+            pictureBox8.Size = new Size(100, 100);
             pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
@@ -185,11 +201,13 @@
             // pictureBox9
             // 
             pictureBox9.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox9.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox9.BorderStyle = BorderStyle.FixedSingle;
             pictureBox9.Location = new Point(255, 257);
+            pictureBox9.MaximumSize = new Size(100, 100);
+            pictureBox9.MinimumSize = new Size(100, 100);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(120, 113);
+            pictureBox9.Size = new Size(100, 100);
             pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
@@ -197,11 +215,13 @@
             // pictureBox10
             // 
             pictureBox10.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox10.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox10.BorderStyle = BorderStyle.FixedSingle;
             pictureBox10.Location = new Point(381, 3);
+            pictureBox10.MaximumSize = new Size(100, 100);
+            pictureBox10.MinimumSize = new Size(100, 100);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(120, 111);
+            pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox10.TabIndex = 9;
             pictureBox10.TabStop = false;
@@ -209,11 +229,13 @@
             // pictureBox11
             // 
             pictureBox11.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox11.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox11.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox11.BorderStyle = BorderStyle.FixedSingle;
             pictureBox11.Location = new Point(381, 130);
+            pictureBox11.MaximumSize = new Size(100, 100);
+            pictureBox11.MinimumSize = new Size(100, 100);
             pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(120, 111);
+            pictureBox11.Size = new Size(100, 100);
             pictureBox11.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox11.TabIndex = 10;
             pictureBox11.TabStop = false;
@@ -221,11 +243,13 @@
             // pictureBox12
             // 
             pictureBox12.BackgroundImage = Properties.Resources.valkoinen;
-            pictureBox12.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox12.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox12.BorderStyle = BorderStyle.FixedSingle;
             pictureBox12.Location = new Point(381, 257);
+            pictureBox12.MaximumSize = new Size(100, 100);
+            pictureBox12.MinimumSize = new Size(100, 100);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(120, 113);
+            pictureBox12.Size = new Size(100, 100);
             pictureBox12.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox12.TabIndex = 11;
             pictureBox12.TabStop = false;
