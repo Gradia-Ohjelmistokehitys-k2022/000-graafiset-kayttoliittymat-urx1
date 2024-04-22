@@ -21,6 +21,7 @@ namespace Muistipeli
         {
             var form1 = new Form1();
             form1.Show();
+
         }
     }
 }

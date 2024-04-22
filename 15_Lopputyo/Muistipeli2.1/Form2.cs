@@ -91,7 +91,6 @@ namespace Muistipeli
 
             MessageBox.Show("voitit pelin jes");
             Close();
-
         }
 
         private void pictureBoxClick(object sender, EventArgs e)
