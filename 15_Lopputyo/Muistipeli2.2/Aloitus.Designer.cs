@@ -30,6 +30,7 @@
         {
             b_aloita3x4 = new Button();
             b_aloita4x4 = new Button();
+            b_aloita2p = new Button();
             SuspendLayout();
             // 
             // b_aloita3x4
@@ -52,11 +53,22 @@
             b_aloita4x4.UseVisualStyleBackColor = true;
             b_aloita4x4.Click += b_aloita4x4_Click;
             // 
+            // b_aloita2p
+            // 
+            b_aloita2p.Location = new Point(301, 283);
+            b_aloita2p.Name = "b_aloita2p";
+            b_aloita2p.Size = new Size(180, 29);
+            b_aloita2p.TabIndex = 2;
+            b_aloita2p.Text = "Aloita kaksinpeli";
+            b_aloita2p.UseVisualStyleBackColor = true;
+            b_aloita2p.Click += b_aloita2p_Click;
+            // 
             // Aloitus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(b_aloita2p);
             Controls.Add(b_aloita4x4);
             Controls.Add(b_aloita3x4);
             Name = "Aloitus";
@@ -68,5 +80,6 @@
 
         private Button b_aloita3x4;
         private Button b_aloita4x4;
+        private Button b_aloita2p;
     }
 }

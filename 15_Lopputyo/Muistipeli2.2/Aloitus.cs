@@ -21,7 +21,7 @@ namespace Muistipeli
         {
             var form1 = new Form1();
             form1.Show();
-//            this.Close();
+            //            this.Close();
 
         }
 
@@ -29,6 +29,12 @@ namespace Muistipeli
         {
             var form2 = new Form2();
             form2.Show();
+        }
+
+        private void b_aloita2p_Click(object sender, EventArgs e)
+        {
+            var form3 = new Form3();
+            form3.Show();
         }
     }
 }
