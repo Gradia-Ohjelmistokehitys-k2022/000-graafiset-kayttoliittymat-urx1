@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,12 +29,9 @@ namespace Muistipeli
             this.p1 = p1name;
             this.p2 = p2name;
 
-
             l_p1pts.Text = p1name + " pisteet: " + p1pts.ToString();
             l_p2pts.Text = p2name + " pisteet: " + p2pts.ToString();
             l_vuoro.Text = "Vuoro: " + p1;
-
-
 
             JaaKortit();
 
@@ -53,7 +51,6 @@ namespace Muistipeli
             pictureBox14.Click += (sender, e) => pictureBoxClick(sender, e);
             pictureBox15.Click += (sender, e) => pictureBoxClick(sender, e);
             pictureBox16.Click += (sender, e) => pictureBoxClick(sender, e);
-
 
         }
 
@@ -109,16 +106,21 @@ namespace Muistipeli
             if (p1pts > p2pts)
             {
                 MessageBox.Show(p1 + " voitti pelin " + p1pts.ToString() + " pisteellä!");
+                saveResults(p1 + "voitti pelin.", p1, p1pts, p2, p2pts);
+
                 Close();
             }
             else if (p1pts < p2pts)
             {
                 MessageBox.Show(p2 + " voitti pelin " + p2pts.ToString() + " pisteellä!");
+                saveResults(p2 + "voitti pelin.", p1, p1pts, p2, p2pts);
                 Close();
             }
             else if (p1pts == p2pts)
             {
                 MessageBox.Show("Tasapeli! Olette molemmat voittajia!");
+                saveResults(p1 + " ja " + p2 + "pelasivat tasapelin.", p1, p1pts, p2, p2pts);
+                Close();
             }
 
         }
@@ -150,6 +152,7 @@ namespace Muistipeli
 
                 secondBoxClick = clickedBox; //TOKA KLIKKAUS EI PARIA
                 secondBoxClick.Image = null;
+                Voitto();
 
 
                 if (firstBoxClick.BackgroundImage == secondBoxClick.BackgroundImage)
@@ -171,10 +174,10 @@ namespace Muistipeli
                         return;
                     }
 
-                    return;
+                    //return;
                 }
-                Voitto();
 
+                Voitto();
 
                 timer1.Start();
 
@@ -207,7 +210,6 @@ namespace Muistipeli
                 clickCounter = 0;
                 changeTurn();
             }
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -218,12 +220,36 @@ namespace Muistipeli
         firstBoxClick.Image = valkoinen;
         secondBoxClick.Image = valkoinen;
 
-            clickCounter++;
-            clickCheck();
+        clickCounter++;
+        clickCheck();
 
         firstBoxClick = null;
         secondBoxClick = null;
 
+        }
+
+        private void saveResults(string tulos, string p1nimi, int p1pisteet, string p2nimi, int p2pisteet)
+        {
+            try
+            {
+                //Pass the filepath and filename to the StreamWriter Constructor
+                StreamWriter sw = new StreamWriter("C:\\Users\\Koti\\muistipeli.txt");
+                //Write a line of text
+                sw.WriteLine("Tulos: " + tulos);
+                //Write a second line of text
+                sw.WriteLine(p1nimi + " pisteet: " + p1pisteet.ToString());
+                //Close the file
+                sw.WriteLine(p2nimi + " pisteet: " + p2pisteet.ToString());
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }
         }
     }
 }
