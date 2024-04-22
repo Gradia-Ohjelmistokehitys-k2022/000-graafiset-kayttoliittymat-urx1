@@ -22,11 +22,5 @@ namespace Muistipeli
             var form1 = new Form1();
             form1.Show();
         }
-
-        private void b_aloita4x4_Click(object sender, EventArgs e)
-        {
-            var form2 = new Form2();
-            form2.Show();
-        }
     }
 }

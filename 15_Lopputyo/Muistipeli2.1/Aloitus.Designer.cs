@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             b_aloita3x4 = new Button();
-            b_aloita4x4 = new Button();
             SuspendLayout();
             // 
             // b_aloita3x4
             // 
-            b_aloita3x4.Location = new Point(308, 109);
+            b_aloita3x4.Location = new Point(301, 155);
             b_aloita3x4.Name = "b_aloita3x4";
             b_aloita3x4.Size = new Size(180, 29);
             b_aloita3x4.TabIndex = 0;
@@ -42,22 +41,11 @@
             b_aloita3x4.UseVisualStyleBackColor = true;
             b_aloita3x4.Click += b_aloita3x4_Click;
             // 
-            // b_aloita4x4
-            // 
-            b_aloita4x4.Location = new Point(308, 183);
-            b_aloita4x4.Name = "b_aloita4x4";
-            b_aloita4x4.Size = new Size(180, 29);
-            b_aloita4x4.TabIndex = 1;
-            b_aloita4x4.Text = "Aloita peli (4x4)";
-            b_aloita4x4.UseVisualStyleBackColor = true;
-            b_aloita4x4.Click += b_aloita4x4_Click;
-            // 
             // Aloitus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(b_aloita4x4);
             Controls.Add(b_aloita3x4);
             Name = "Aloitus";
             Text = "Aloitus";
@@ -67,6 +55,5 @@
         #endregion
 
         private Button b_aloita3x4;
-        private Button b_aloita4x4;
     }
 }
