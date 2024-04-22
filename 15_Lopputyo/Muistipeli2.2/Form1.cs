@@ -37,9 +37,6 @@ namespace Muistipeli
 
         private static Random rng = new Random();
 
-        int clicks = 0;
-        int points = 0;
-        static int tries = 6;
 
         static Image keltainen = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2.2\\kuvia\\keltainen.png");
         static Image musta = Image.FromFile("C:\\Users\\Koti\\Documents\\GitHub\\000-graafiset-kayttoliittymat-urx1\\15_Lopputyo\\Muistipeli2.2\\kuvia\\musta.png");

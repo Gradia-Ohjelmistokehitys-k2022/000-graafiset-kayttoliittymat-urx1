@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
-            l_tries = new Label();
             l_debug = new Label();
-            l_points = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -73,25 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 14;
-            label1.Text = "label1";
-            // 
-            // l_tries
-            // 
-            l_tries.AutoSize = true;
-            l_tries.Location = new Point(12, 73);
-            l_tries.Name = "l_tries";
-            l_tries.Size = new Size(125, 20);
-            l_tries.TabIndex = 13;
-            l_tries.Text = "Yrityksiä jäljellä: 6";
-            l_tries.TextAlign = ContentAlignment.TopCenter;
-            // 
             // l_debug
             // 
             l_debug.AutoSize = true;
@@ -99,15 +77,6 @@
             l_debug.Name = "l_debug";
             l_debug.Size = new Size(0, 20);
             l_debug.TabIndex = 12;
-            // 
-            // l_points
-            // 
-            l_points.AutoSize = true;
-            l_points.Location = new Point(396, 556);
-            l_points.Name = "l_points";
-            l_points.Size = new Size(68, 20);
-            l_points.TabIndex = 11;
-            l_points.Text = "Pisteet: 0";
             // 
             // tableLayoutPanel1
             // 
@@ -150,6 +119,7 @@
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 101);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -161,6 +131,7 @@
             pictureBox2.Location = new Point(129, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(120, 101);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -172,6 +143,7 @@
             pictureBox3.Location = new Point(255, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(120, 101);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
@@ -183,6 +155,7 @@
             pictureBox4.Location = new Point(3, 110);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(120, 101);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
@@ -194,6 +167,7 @@
             pictureBox5.Location = new Point(129, 110);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(120, 101);
+            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
@@ -205,6 +179,7 @@
             pictureBox6.Location = new Point(255, 110);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(120, 101);
+            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
             // 
@@ -216,6 +191,7 @@
             pictureBox7.Location = new Point(3, 217);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(120, 101);
+            pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
             // 
@@ -227,6 +203,7 @@
             pictureBox8.Location = new Point(129, 217);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(120, 101);
+            pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
             // 
@@ -238,6 +215,7 @@
             pictureBox9.Location = new Point(255, 217);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(120, 101);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
             // 
@@ -249,6 +227,7 @@
             pictureBox10.Location = new Point(381, 3);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(120, 101);
+            pictureBox10.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox10.TabIndex = 9;
             pictureBox10.TabStop = false;
             // 
@@ -260,6 +239,7 @@
             pictureBox11.Location = new Point(381, 110);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(120, 101);
+            pictureBox11.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox11.TabIndex = 10;
             pictureBox11.TabStop = false;
             // 
@@ -271,6 +251,7 @@
             pictureBox12.Location = new Point(381, 217);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(120, 101);
+            pictureBox12.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox12.TabIndex = 11;
             pictureBox12.TabStop = false;
             // 
@@ -282,6 +263,7 @@
             pictureBox13.Location = new Point(3, 324);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(120, 104);
+            pictureBox13.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox13.TabIndex = 12;
             pictureBox13.TabStop = false;
             // 
@@ -293,6 +275,7 @@
             pictureBox14.Location = new Point(129, 324);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(120, 104);
+            pictureBox14.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox14.TabIndex = 13;
             pictureBox14.TabStop = false;
             // 
@@ -304,6 +287,7 @@
             pictureBox15.Location = new Point(255, 324);
             pictureBox15.Name = "pictureBox15";
             pictureBox15.Size = new Size(120, 104);
+            pictureBox15.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox15.TabIndex = 14;
             pictureBox15.TabStop = false;
             // 
@@ -315,6 +299,7 @@
             pictureBox16.Location = new Point(381, 324);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(120, 104);
+            pictureBox16.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox16.TabIndex = 15;
             pictureBox16.TabStop = false;
             // 
@@ -326,27 +311,28 @@
             // l_p1pts
             // 
             l_p1pts.AutoSize = true;
-            l_p1pts.Location = new Point(246, 25);
+            l_p1pts.Location = new Point(172, 33);
             l_p1pts.Name = "l_p1pts";
-            l_p1pts.Size = new Size(81, 20);
+            l_p1pts.Size = new Size(89, 20);
             l_p1pts.TabIndex = 15;
-            l_p1pts.Text = "P1 pisteet: ";
+            l_p1pts.Text = "P1 pisteet: 0";
             // 
             // l_p2pts
             // 
             l_p2pts.AutoSize = true;
-            l_p2pts.Location = new Point(484, 22);
+            l_p2pts.Location = new Point(584, 33);
             l_p2pts.Name = "l_p2pts";
-            l_p2pts.Size = new Size(81, 20);
+            l_p2pts.Size = new Size(89, 20);
             l_p2pts.TabIndex = 16;
-            l_p2pts.Text = "P2 pisteet: ";
+            l_p2pts.Text = "P2 pisteet: 0";
             // 
             // l_vuoro
             // 
             l_vuoro.AutoSize = true;
-            l_vuoro.Location = new Point(357, 55);
+            l_vuoro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            l_vuoro.Location = new Point(371, 33);
             l_vuoro.Name = "l_vuoro";
-            l_vuoro.Size = new Size(119, 20);
+            l_vuoro.Size = new Size(126, 20);
             l_vuoro.TabIndex = 17;
             l_vuoro.Text = "Vuoro: Pelaaja 1 ";
             // 
@@ -354,18 +340,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(800, 629);
             Controls.Add(l_vuoro);
             Controls.Add(l_p2pts);
             Controls.Add(l_p1pts);
-            Controls.Add(label1);
-            Controls.Add(l_tries);
             Controls.Add(l_debug);
-            Controls.Add(l_points);
             Controls.Add(tableLayoutPanel1);
             Name = "Form3";
             Text = "Form3";
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -387,11 +372,7 @@
         }
 
         #endregion
-
-        private Label label1;
-        private Label l_tries;
         private Label l_debug;
-        private Label l_points;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;

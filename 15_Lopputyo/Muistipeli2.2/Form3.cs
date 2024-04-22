@@ -140,11 +140,7 @@ namespace Muistipeli
 
                 secondBoxClick = clickedBox; //TOKA KLIKKAUS EI PARIA
                 secondBoxClick.Image = null;
-                //changeTurn();
-                //clickCounter++;
-                //clickCheck();
 
-                //Voitto();
 
                 if (firstBoxClick.BackgroundImage == secondBoxClick.BackgroundImage)
                 {
@@ -153,14 +149,14 @@ namespace Muistipeli
                     if (p1turn == true)
                     {
                         p1pts++;
-                        l_p1pts.Text = p1pts.ToString();
+                        l_p1pts.Text = "P1 pisteet: " + p1pts.ToString();
                         changeTurn();
                         return;
                     }
                     if (p2turn == true) 
                     {
                         p2pts++;
-                        l_p2pts.Text = p2pts.ToString();
+                        l_p2pts.Text = "P2 pisteet: " + p2pts.ToString();
                         changeTurn();
                         return;
                     }
@@ -203,11 +199,9 @@ namespace Muistipeli
         {
             if (clickCounter == 2)
             {
-                label1.Text = clickCounter.ToString();
                 clickCounter = 0;
                 changeTurn();
             }
-            label1.Text = clickCounter.ToString();
 
         }
 

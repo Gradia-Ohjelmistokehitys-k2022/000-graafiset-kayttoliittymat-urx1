@@ -42,10 +42,6 @@
             pictureBox10 = new PictureBox();
             pictureBox11 = new PictureBox();
             pictureBox12 = new PictureBox();
-            l_points = new Label();
-            l_debug = new Label();
-            l_tries = new Label();
-            label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -98,6 +94,7 @@
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 111);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -109,6 +106,7 @@
             pictureBox2.Location = new Point(129, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(120, 111);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -120,6 +118,7 @@
             pictureBox3.Location = new Point(255, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(120, 111);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
@@ -131,6 +130,7 @@
             pictureBox4.Location = new Point(3, 130);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(120, 111);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
@@ -142,6 +142,7 @@
             pictureBox5.Location = new Point(129, 130);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(120, 111);
+            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
@@ -153,6 +154,7 @@
             pictureBox6.Location = new Point(255, 130);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(120, 111);
+            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
             // 
@@ -164,6 +166,7 @@
             pictureBox7.Location = new Point(3, 257);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(120, 113);
+            pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox7.TabIndex = 6;
             pictureBox7.TabStop = false;
             // 
@@ -175,6 +178,7 @@
             pictureBox8.Location = new Point(129, 257);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(120, 113);
+            pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox8.TabIndex = 7;
             pictureBox8.TabStop = false;
             // 
@@ -186,6 +190,7 @@
             pictureBox9.Location = new Point(255, 257);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(120, 113);
+            pictureBox9.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox9.TabIndex = 8;
             pictureBox9.TabStop = false;
             // 
@@ -197,6 +202,7 @@
             pictureBox10.Location = new Point(381, 3);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(120, 111);
+            pictureBox10.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox10.TabIndex = 9;
             pictureBox10.TabStop = false;
             // 
@@ -208,6 +214,7 @@
             pictureBox11.Location = new Point(381, 130);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(120, 111);
+            pictureBox11.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox11.TabIndex = 10;
             pictureBox11.TabStop = false;
             // 
@@ -219,44 +226,9 @@
             pictureBox12.Location = new Point(381, 257);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(120, 113);
+            pictureBox12.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox12.TabIndex = 11;
             pictureBox12.TabStop = false;
-            // 
-            // l_points
-            // 
-            l_points.AutoSize = true;
-            l_points.Location = new Point(293, 456);
-            l_points.Name = "l_points";
-            l_points.Size = new Size(68, 20);
-            l_points.TabIndex = 1;
-            l_points.Text = "Pisteet: 0";
-            // 
-            // l_debug
-            // 
-            l_debug.AutoSize = true;
-            l_debug.Location = new Point(293, 19);
-            l_debug.Name = "l_debug";
-            l_debug.Size = new Size(0, 20);
-            l_debug.TabIndex = 2;
-            // 
-            // l_tries
-            // 
-            l_tries.AutoSize = true;
-            l_tries.Location = new Point(262, 19);
-            l_tries.Name = "l_tries";
-            l_tries.Size = new Size(125, 20);
-            l_tries.TabIndex = 3;
-            l_tries.Text = "Yrityksiä jäljellä: 6";
-            l_tries.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
             // 
             // timer1
             // 
@@ -268,14 +240,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(629, 495);
-            Controls.Add(label1);
-            Controls.Add(l_tries);
-            Controls.Add(l_debug);
-            Controls.Add(l_points);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
             Text = "Form1";
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -289,7 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -307,10 +275,6 @@
         private PictureBox pictureBox10;
         private PictureBox pictureBox11;
         private PictureBox pictureBox12;
-        private Label l_points;
-        private Label l_debug;
-        private Label l_tries;
-        private Label label1;
         private System.Windows.Forms.Timer timer1;
     }
 }
