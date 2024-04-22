@@ -31,11 +31,12 @@
             b_aloita3x4 = new Button();
             b_aloita4x4 = new Button();
             b_aloita2p = new Button();
+            b_luetulokset = new Button();
             SuspendLayout();
             // 
             // b_aloita3x4
             // 
-            b_aloita3x4.Location = new Point(301, 155);
+            b_aloita3x4.Location = new Point(299, 94);
             b_aloita3x4.Name = "b_aloita3x4";
             b_aloita3x4.Size = new Size(180, 29);
             b_aloita3x4.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // b_aloita4x4
             // 
-            b_aloita4x4.Location = new Point(301, 219);
+            b_aloita4x4.Location = new Point(299, 158);
             b_aloita4x4.Name = "b_aloita4x4";
             b_aloita4x4.Size = new Size(180, 29);
             b_aloita4x4.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // b_aloita2p
             // 
-            b_aloita2p.Location = new Point(301, 283);
+            b_aloita2p.Location = new Point(299, 222);
             b_aloita2p.Name = "b_aloita2p";
             b_aloita2p.Size = new Size(180, 29);
             b_aloita2p.TabIndex = 2;
@@ -63,11 +64,22 @@
             b_aloita2p.UseVisualStyleBackColor = true;
             b_aloita2p.Click += b_aloita2p_Click;
             // 
+            // b_luetulokset
+            // 
+            b_luetulokset.Location = new Point(299, 288);
+            b_luetulokset.Name = "b_luetulokset";
+            b_luetulokset.Size = new Size(180, 29);
+            b_luetulokset.TabIndex = 3;
+            b_luetulokset.Text = "Lue pelien tuloksia";
+            b_luetulokset.UseVisualStyleBackColor = true;
+            b_luetulokset.Click += b_luetulokset_Click;
+            // 
             // Aloitus
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(b_luetulokset);
             Controls.Add(b_aloita2p);
             Controls.Add(b_aloita4x4);
             Controls.Add(b_aloita3x4);
@@ -81,5 +93,6 @@
         private Button b_aloita3x4;
         private Button b_aloita4x4;
         private Button b_aloita2p;
+        private Button b_luetulokset;
     }
 }

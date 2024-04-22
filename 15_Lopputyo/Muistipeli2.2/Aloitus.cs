@@ -21,8 +21,6 @@ namespace Muistipeli
         {
             var form1 = new Form1();
             form1.Show();
-            //            this.Close();
-
         }
 
         private void b_aloita4x4_Click(object sender, EventArgs e)
@@ -35,6 +33,28 @@ namespace Muistipeli
         {
             var form4 = new Form4();
             form4.Show();
+        }
+
+        private void b_luetulokset_Click(object sender, EventArgs e)
+        {
+            string path = "C:\\Users\\Koti\\Desktop\\muistipeli.txt";
+
+            if (File.Exists(path)) 
+            {
+                try
+                {
+                    // Open the text file using a stream reader.
+                    using (var sr = new StreamReader(path))
+                    {
+                        // Read the stream as a string, and write the string to the console.
+                        MessageBox.Show(sr.ReadToEnd());
+                    }
+                }
+                catch (IOException x)
+                {
+                    MessageBox.Show("Tiedostoa ei löydy! Oletko jo pelannut peliä?");
+                }
+            }
         }
     }
 }
