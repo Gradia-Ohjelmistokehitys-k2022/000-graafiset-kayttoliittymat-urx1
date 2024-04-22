@@ -106,14 +106,14 @@ namespace Muistipeli
             if (p1pts > p2pts)
             {
                 MessageBox.Show(p1 + " voitti pelin " + p1pts.ToString() + " pisteellä!");
-                saveResults(p1 + "voitti pelin.", p1, p1pts, p2, p2pts);
+                saveResults(p1 + " voitti pelin.", p1, p1pts, p2, p2pts);
 
                 Close();
             }
             else if (p1pts < p2pts)
             {
                 MessageBox.Show(p2 + " voitti pelin " + p2pts.ToString() + " pisteellä!");
-                saveResults(p2 + "voitti pelin.", p1, p1pts, p2, p2pts);
+                saveResults(p2 + " voitti pelin.", p1, p1pts, p2, p2pts);
                 Close();
             }
             else if (p1pts == p2pts)
@@ -230,25 +230,61 @@ namespace Muistipeli
 
         private void saveResults(string tulos, string p1nimi, int p1pisteet, string p2nimi, int p2pisteet)
         {
-            try
+            string path = "C:\\Users\\Koti\\Desktop\\muistipeli.txt";
+            if (!File.Exists(path))
             {
-                //Pass the filepath and filename to the StreamWriter Constructor
-                StreamWriter sw = new StreamWriter("C:\\Users\\Koti\\muistipeli.txt");
-                //Write a line of text
-                sw.WriteLine("Tulos: " + tulos);
-                //Write a second line of text
-                sw.WriteLine(p1nimi + " pisteet: " + p1pisteet.ToString());
-                //Close the file
-                sw.WriteLine(p2nimi + " pisteet: " + p2pisteet.ToString());
-                sw.Close();
+                try
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        //Pass the filepath and filename to the StreamWriter Constructor
+                        //                    StreamWriter sw = new StreamWriter(path);
+                        //Write a line of text
+                        sw.WriteLine("Tulos: " + tulos);
+                        //Write a second line of text
+                        sw.WriteLine(p1nimi + " pisteet: " + p1pisteet.ToString());
+                        //Close the file
+                        sw.WriteLine(p2nimi + " pisteet: " + p2pisteet.ToString());
+                        sw.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Pelin tiedot tallennettu työpöydälle!");
+                }
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("Exception: " + e.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Executing finally block.");
+                try
+                {
+                    using (StreamWriter sw = File.AppendText(path))
+                    {
+                        //Pass the filepath and filename to the StreamWriter Constructor
+                        //                    StreamWriter sw = new StreamWriter(path);
+                        //Write a line of text
+                        sw.WriteLine("");
+                        sw.WriteLine("***");
+                        sw.WriteLine("");
+                        sw.WriteLine("Tulos: " + tulos);
+                        //Write a second line of text
+                        sw.WriteLine(p1nimi + " pisteet: " + p1pisteet.ToString());
+                        //Close the file
+                        sw.WriteLine(p2nimi + " pisteet: " + p2pisteet.ToString());
+                        sw.Close();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+                finally
+                {
+                    MessageBox.Show("Pelin tiedot tallennettu työpöydälle!");
+                }
             }
         }
     }
