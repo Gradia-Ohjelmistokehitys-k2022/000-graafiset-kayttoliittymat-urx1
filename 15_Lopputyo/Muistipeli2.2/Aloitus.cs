@@ -33,8 +33,8 @@ namespace Muistipeli
 
         private void b_aloita2p_Click(object sender, EventArgs e)
         {
-            var form3 = new Form3();
-            form3.Show();
+            var form4 = new Form4();
+            form4.Show();
         }
     }
 }

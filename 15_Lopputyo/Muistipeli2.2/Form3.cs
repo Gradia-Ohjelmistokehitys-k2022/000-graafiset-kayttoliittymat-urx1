@@ -10,16 +10,31 @@ using System.Windows.Forms;
 
 namespace Muistipeli
 {
+
     public partial class Form3 : Form
     {
+        public string p1 { get; set; }
+        public string p2 { get; set; }
+
         Random random = new Random();
 
         PictureBox firstBoxClick = null;
         PictureBox secondBoxClick = null;
 
-        public Form3()
+        public Form3(string p1name, string p2name)
         {
             InitializeComponent();
+
+            this.p1 = p1name;
+            this.p2 = p2name;
+
+
+            l_p1pts.Text = p1name + " pisteet: " + p1pts.ToString();
+            l_p2pts.Text = p2name + " pisteet: " + p2pts.ToString();
+            l_vuoro.Text = "Vuoro: " + p1;
+
+
+
             JaaKortit();
 
             pictureBox1.Click += (sender, e) => pictureBoxClick(sender, e);
@@ -44,12 +59,7 @@ namespace Muistipeli
 
         private static Random rng = new Random();
 
-        int clicks = 0;
-        int points = 0;
-        static int tries = 6;
         int clickCounter = 0;
-        int turnCounter = 0;
-        int roundCounter = 1;
         int p1pts = 0;
         int p2pts = 0;
         bool p1turn = true;
@@ -98,12 +108,12 @@ namespace Muistipeli
             }
             if (p1pts > p2pts)
             {
-                MessageBox.Show("Pelaaja 1 voitti pelin " + p1pts.ToString() + " pisteellä!");
+                MessageBox.Show(p1 + " voitti pelin " + p1pts.ToString() + " pisteellä!");
                 Close();
             }
             else if (p1pts < p2pts)
             {
-                MessageBox.Show("Pelaaja 2 voitti pelin " + p2pts.ToString() + " pisteellä!");
+                MessageBox.Show(p2 + " voitti pelin " + p2pts.ToString() + " pisteellä!");
                 Close();
             }
             else if (p1pts == p2pts)
@@ -149,14 +159,14 @@ namespace Muistipeli
                     if (p1turn == true)
                     {
                         p1pts++;
-                        l_p1pts.Text = "P1 pisteet: " + p1pts.ToString();
+                        l_p1pts.Text = p1 + ":n pisteet: " + p1pts.ToString();
                         changeTurn();
                         return;
                     }
                     if (p2turn == true) 
                     {
                         p2pts++;
-                        l_p2pts.Text = "P2 pisteet: " + p2pts.ToString();
+                        l_p2pts.Text = p2 + ":n pisteet: " + p2pts.ToString();
                         changeTurn();
                         return;
                     }
@@ -179,20 +189,15 @@ namespace Muistipeli
             {
                 p1turn = false;
                 p2turn = true;
-                l_vuoro.Text = "Vuoro: Pelaaja 2";
+                l_vuoro.Text = "Vuoro: " + p2;
             }
             else if (p2turn == true)
             {
                 p2turn = false;
                 p1turn = true;
-                l_vuoro.Text = "Vuoro: Pelaaja 1";
+                l_vuoro.Text = "Vuoro: " + p1;
             }
-            /*
-            else
-            {
-                return;
-            }
-            */
+
         }
 
         private void clickCheck()
