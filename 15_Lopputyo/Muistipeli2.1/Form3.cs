@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace Muistipeli
 {
-    public partial class Form2 : Form
+    public partial class Form3 : Form
     {
+
         Random random = new Random();
 
         PictureBox firstBoxClick = null;
         PictureBox secondBoxClick = null;
 
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
             JaaKortit();
@@ -134,76 +135,16 @@ namespace Muistipeli
             }
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
+                timer1.Stop();
 
-            firstBoxClick.Image = valkoinen;
-            secondBoxClick.Image = valkoinen;
+                firstBoxClick.Image = valkoinen;
+                secondBoxClick.Image = valkoinen;
 
-            firstBoxClick = null;
-            secondBoxClick = null;
-        }
-
-        /*
-        if (lastClickedBox == null) 
-        { 
-            picbox.BackgroundImage = picboximg;
-            lastClickedBox = picbox;
-            lastClickedImg = picboximg;
-
-        }
-        if (clicks <= 1 && lastClickedImg == picboximg)
-        {
-            picbox.BackgroundImage = picboximg;
-            lastClickedImg = pb1img;
-            points++;
-            l_points.Text = "Pisteet: " + points.ToString();
-        }
-
-        if (lastClickedBox != null && lastClickedImg != picboximg) 
-        {
-            lastClickedBox.BackgroundImage = valkoinen;
-            picbox.BackgroundImage = picboximg;
-            lastClickedBox = picbox;
-            lastClickedImg = picboximg;
-        }
-        */
-
-
-        /*
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (clicks <= 1) 
-            {
-                pictureBox1.BackgroundImage = pb1img;
-                lastClicked = pb1img;
-                var timer = new System.Windows.Forms.Timer();
-                timer.Tick += (sender, e) => TimeOut(pictureBox1, sender, e);
-                timer.Interval = 2000;
-                timer.Start();
+                firstBoxClick = null;
+                secondBoxClick = null;
             }
-            if (clicks <= 1 && lastClicked == pb1img)
-            {
-                pictureBox1.BackgroundImage = pb1img;
-                lastClicked = pb1img;
-                points++;
-                l_points.Text = "Pisteet: " + points.ToString();
-            }
-        }
-
-
-        static void TimeOut(PictureBox picbox, PictureBox picbox2, object sender, EventArgs e)
-            {
-                picbox.BackgroundImage = valkoinen;
-                picbox2.BackgroundImage = valkoinen;
-            }
-
-
-        */
-
-
-
-
     }
 }
