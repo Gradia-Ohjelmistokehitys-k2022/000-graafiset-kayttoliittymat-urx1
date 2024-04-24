@@ -1,7 +1,3 @@
-/*using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-*/
-
 using System.DirectoryServices;
 using KorttiNS;
 
@@ -78,7 +74,7 @@ namespace Muistipeli
                 }
             }
 
-            MessageBox.Show("voitit pelin jes");
+            MessageBox.Show("Voitit pelin!");
             Close();
         }
 

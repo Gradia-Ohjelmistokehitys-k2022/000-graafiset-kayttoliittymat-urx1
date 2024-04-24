@@ -174,7 +174,6 @@ namespace Muistipeli
                         return;
                     }
 
-                    //return;
                 }
 
                 Voitto();
@@ -237,13 +236,9 @@ namespace Muistipeli
                 {
                     using (StreamWriter sw = File.CreateText(path))
                     {
-                        //Pass the filepath and filename to the StreamWriter Constructor
-                        //                    StreamWriter sw = new StreamWriter(path);
-                        //Write a line of text
+
                         sw.WriteLine("Tulos: " + tulos);
-                        //Write a second line of text
                         sw.WriteLine(p1nimi + " pisteet: " + p1pisteet.ToString());
-                        //Close the file
                         sw.WriteLine(p2nimi + " pisteet: " + p2pisteet.ToString());
                         sw.Close();
                     }
@@ -263,9 +258,6 @@ namespace Muistipeli
                 {
                     using (StreamWriter sw = File.AppendText(path))
                     {
-                        //Pass the filepath and filename to the StreamWriter Constructor
-                        //                    StreamWriter sw = new StreamWriter(path);
-                        //Write a line of text
                         sw.WriteLine("");
                         sw.WriteLine("***");
                         sw.WriteLine("");
